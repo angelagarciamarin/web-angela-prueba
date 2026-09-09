@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: angelagarciamarin/web-angela-prueba
+  branch: main
+  base_url: "https://PENDIENTE-DE-CONFIGURAR.workers.dev"
+
+media_folder: "content/talleres"
+public_folder: "/talleres"
+
+collections:
+  - name: "paginas"
+    label: "Páginas"
+    files:
+      - label: "Inicio"
+        name: "inicio"
+        file: "content/paginas/inicio.md"
+        fields:
+          - { label: "Título SEO", name: "seo_titulo", widget: "string" }
+          - { label: "Descripción SEO", name: "seo_descripcion", widget: "text" }
+          - { label: "Título del Hero", name: "hero_titulo", widget: "string" }
+          - { label: "Subtítulo del Hero", name: "hero_subtitulo", widget: "text" }
+          - { label: "Línea práctica", name: "hero_linea", widget: "string" }
+
+      - label: "Tarifas"
+        name: "tarifas"
+        file: "content/paginas/tarifas.md"
+        fields:
+          - { label: "Título SEO", name: "seo_titulo", widget: "string" }
+          - { label: "Descripción SEO", name: "seo_descripcion", widget: "text" }
+          - { label: "Introducción", name: "intro", widget: "text" }
+          - { label: "Individual Almagro", name: "tarifa_individual_almagro", widget: "string", required: false }
+          - { label: "Pareja Almagro", name: "tarifa_pareja_almagro", widget: "string", required: false }
+
+  - name: "faq"
+    label: "Preguntas frecuentes"
+    folder: "content/faq"
+    create: true
+    fields:
+      - { label: "Pregunta", name: "pregunta", widget: "string" }
+      - { label: "Respuesta", name: "respuesta", widget: "text" }
+      - { label: "Etiqueta (no tocar)", name: "tags", widget: "hidden", default: "faq" }
+      - { label: "Permalink (no tocar)", name: "permalink", widget: "hidden", default: false }
+
+  - name: "talleres"
+    label: "Talleres infantiles"
+    folder: "content/talleres"
+    create: true
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Mes", name: "mes", widget: "string" }
+      - { label: "Fecha (opcional, dejar vacío si aún no se sabe)", name: "fecha", widget: "string", required: false }
+      - { label: "Edades", name: "edades", widget: "string" }
+      - { label: "Precio (opcional)", name: "precio", widget: "string", required: false }
+      - { label: "Cartel (opcional)", name: "cartel", widget: "image", required: false }
+      - { label: "Objetivo (opcional)", name: "objetivo", widget: "text", required: false }
+      - label: "Estado"
+        name: "estado"
+        widget: "select"
+        options: ["Previsto", "Próximo", "Realizado"]
+      - { label: "Etiqueta (no tocar)", name: "tags", widget: "hidden", default: "talleres" }
+      - { label: "Permalink (no tocar)", name: "permalink", widget: "hidden", default: false }

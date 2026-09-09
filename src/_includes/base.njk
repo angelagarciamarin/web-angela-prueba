@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ seo_titulo or title }}</title>
+<meta name="description" content="{{ seo_descripcion }}">
+<style>
+  :root{
+    --crema:#F6F1E9;
+    --verde-salvia:#7C8B6F;
+    --verde-oscuro:#4B5842;
+    --rosa:#D8A8A0;
+    --texto:#3B3B36;
+  }
+  *{box-sizing:border-box;}
+  body{font-family: Georgia, 'Times New Roman', serif; background:var(--crema); color:var(--texto); margin:0; line-height:1.65;}
+  header{padding:1.2rem 1.5rem; display:flex; justify-content:space-between; align-items:center; font-family: Arial, sans-serif; flex-wrap:wrap; gap:0.8rem;}
+  header a.logo{color:var(--verde-oscuro); text-decoration:none; font-weight:bold; font-size:1.1rem;}
+  nav a{margin-right:1.2rem; color:var(--texto); text-decoration:none; font-family:Arial, sans-serif; font-size:0.92rem;}
+  nav a:last-child{margin-right:0;}
+  main{max-width:760px; margin:0 auto; padding:1.5rem 1.5rem 3rem;}
+  h1{font-size:2rem; color:var(--verde-oscuro); margin-bottom:0.5rem;}
+  h2{color:var(--verde-oscuro); margin-top:2.2rem;}
+  h3{color:var(--verde-oscuro); margin-bottom:0.3rem;}
+  .boton{display:inline-block; background:var(--verde-salvia); color:white; padding:0.7rem 1.6rem; border-radius:6px; text-decoration:none; font-family:Arial, sans-serif; margin-top:0.8rem;}
+  .tarjeta{background:#ffffffaa; border-radius:10px; padding:1.1rem 1.3rem; margin:1rem 0; border:1px solid #e6ddca;}
+  footer{text-align:center; padding:2rem 1rem; font-family:Arial, sans-serif; font-size:0.82rem; color:#8a8578;}
+  small{color:var(--rosa); font-family:Arial, sans-serif;}
+  @media (max-width:480px){
+    main{padding:1rem;}
+    h1{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="/">Ángela García | Psicóloga</a>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/tarifas/">Tarifas</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/talleres/">Talleres</a>
+  </nav>
+</header>
+<main>
+{{ content | safe }}
+</main>
+<footer>Sitio de prueba — arquitectura Eleventy + Sveltia CMS · Ángela García</footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+name: Construir web
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Construir web
+        run: npm run build
+
+      - name: Guardar web construida
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-angela
+          path: _site

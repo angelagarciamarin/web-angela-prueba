@@ -1,12 +1,12 @@
 ---
-title: Inicio
+seo_titulo: Ángela García | Psicóloga
+seo_descripcion: Psicóloga General Sanitaria en Almagro, Puertollano y online. Cuidar tu mente transforma tu vida.
+hero_titulo: Cuidar tu mente transforma tu vida.
+hero_subtitulo: Un espacio seguro para comprender lo que te ocurre y sanar aquello que duele. (prueba de edición)
+hero_linea: Psicología para niños, adolescentes y adultos · Terapia de pareja y familiar · Almagro, Puertollano y online.
 layout: base.njk
 permalink: /
-seo_titulo: "Ángela García | Psicóloga"
-seo_descripcion: "Psicóloga General Sanitaria en Almagro, Puertollano y online. Cuidar tu mente transforma tu vida."
-hero_titulo: "Cuidar tu mente transforma tu vida."
-hero_subtitulo: "Un espacio seguro para comprender lo que te ocurre y sanar aquello que duele."
-hero_linea: "Psicología para niños, adolescentes y adultos · Terapia de pareja y familiar · Almagro, Puertollano y online."
+title: Inicio
 ---
 
 # {{ hero_titulo }}

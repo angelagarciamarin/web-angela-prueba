@@ -1,12 +1,12 @@
 ---
-title: Tarifas
+seo_titulo: Tarifas | Ángela García Psicóloga
+seo_descripcion: Consulta las tarifas de terapia individual, de pareja y familiar en Almagro, Puertollano y online.
+intro: Las tarifas varían según la ubicación y el tipo de sesión.
+tarifa_individual_almagro: 55€ · aprox. 55 min
+tarifa_pareja_almagro: 65€ · aprox. 90 min
 layout: base.njk
 permalink: /tarifas/
-seo_titulo: "Tarifas | Ángela García Psicóloga"
-seo_descripcion: "Consulta las tarifas de terapia individual, de pareja y familiar en Almagro, Puertollano y online."
-intro: "Las tarifas varían según la ubicación y el tipo de sesión."
-tarifa_individual_almagro: "50€ · aprox. 55 min"
-tarifa_pareja_almagro: "65€ · aprox. 90 min"
+title: Tarifas
 ---
 
 # Tarifas

@@ -14,6 +14,6 @@ seo_descripcion: "Talleres mensuales de bienestar emocional para niños en Almag
 <p>{{ taller.data.mes }}{% if taller.data.fecha %} · {{ taller.data.fecha }}{% endif %} — {{ taller.data.edades }}</p>
 {% if taller.data.objetivo %}<p>{{ taller.data.objetivo }}</p>{% endif %}
 {% if taller.data.precio %}<p>Precio: {{ taller.data.precio }}</p>{% endif %}
-{% if taller.data.cartel %}<p><img src="/talleres/{{ taller.data.cartel }}" alt="Cartel del taller" style="max-width:100%;border-radius:8px;"></p>{% endif %}
+{% if taller.data.cartel %}<p><img src="{{ taller.data.cartel }}" alt="Cartel del taller" style="max-width:100%;border-radius:8px;"></p>{% endif %}
 </div>
 {% endfor %}

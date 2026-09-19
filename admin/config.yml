@@ -2,7 +2,7 @@ backend:
   name: github
   repo: angelagarciamarin/web-angela-prueba
   branch: main
-  base_url: "https://PENDIENTE-DE-CONFIGURAR.workers.dev"
+  base_url: "https://sveltia-cms-auth.psicologa-bbf.workers.dev"
 
 media_folder: "content/talleres"
 public_folder: "/talleres"

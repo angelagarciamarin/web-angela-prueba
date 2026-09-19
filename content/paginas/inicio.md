@@ -1,5 +1,5 @@
 ---
-seo_titulo: Ángela García | Psicóloga (prueba SEO)
+seo_titulo: Ángela García | Psicóloga (prueba SEO) 22
 seo_descripcion: Psicóloga General Sanitaria en Almagro, Puertollano y online. Cuidar tu mente transforma tu vida
 hero_titulo: Cuidar tu mente transforma tu vida.
 hero_subtitulo: Un espacio seguro para comprender lo que te ocurre y sanar aquello que duele. (prueba de edición)

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ seo_titulo or titulo or sitio.marca_nombre }}</title>
+  {% if seo_descripcion %}<meta name="description" content="{{ seo_descripcion }}">{% endif %}
+  {% if sitio.indexar %}<link rel="canonical" href="{{ sitio.url }}{{ page.url }}">{% else %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <meta name="theme-color" content="#15394A">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="{{ seo_titulo or titulo or sitio.marca_nombre }}">
+  {% if seo_descripcion %}<meta property="og:description" content="{{ seo_descripcion }}">{% endif %}
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="/assets/fonts/fraunces/index.css">
+  <link rel="stylesheet" href="/assets/fonts/fraunces/wght-italic.css">
+  <link rel="stylesheet" href="/assets/fonts/jost/index.css">
+  <link rel="stylesheet" href="/assets/css/estilo.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  {% include "cabecera.njk" %}
+  <main id="contenido">
+    {{ content | safe }}
+  </main>
+  {% include "pie.njk" %}
+  <script src="/assets/js/menu.js" defer></script>
+</body>
+</html>

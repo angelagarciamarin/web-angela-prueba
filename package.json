@@ -1,10 +1,15 @@
 {
-  "name": "web-angela-prueba",
+  "name": "web-angela-garcia",
   "version": "1.0.0",
   "private": true,
+  "description": "Web profesional de Ángela García, psicóloga general sanitaria",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.0.0",
+    "@fontsource-variable/jost": "^5.0.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"

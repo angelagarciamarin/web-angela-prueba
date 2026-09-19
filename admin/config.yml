@@ -1,61 +1,233 @@
+# Panel de edición (Sveltia CMS) — web de Ángela García
 backend:
   name: github
   repo: angelagarciamarin/web-angela-prueba
   branch: main
-  base_url: "https://sveltia-cms-auth.psicologa-bbf.workers.dev"
+  base_url: https://sveltia-cms-auth.psicologa-bbf.workers.dev
 
-media_folder: "content/talleres"
-public_folder: "/talleres"
+site_url: https://web-angela-prueba.pages.dev
+display_url: https://web-angela-prueba.pages.dev
+locale: es
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
 
 collections:
-  - name: "paginas"
+  # ------------------------------------------------------------------ PÁGINAS
+  - name: paginas
     label: "Páginas"
     files:
-      - label: "Inicio"
-        name: "inicio"
-        file: "content/paginas/inicio.md"
+      - name: inicio
+        label: "Inicio"
+        file: contenido/paginas/inicio.md
         fields:
-          - { label: "Título SEO", name: "seo_titulo", widget: "string" }
-          - { label: "Descripción SEO", name: "seo_descripcion", widget: "text" }
-          - { label: "Título del Hero", name: "hero_titulo", widget: "string" }
-          - { label: "Subtítulo del Hero", name: "hero_subtitulo", widget: "text" }
-          - { label: "Línea práctica", name: "hero_linea", widget: "string" }
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "inicio.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Resumen que puede aparecer bajo el título en Google. Ideal: unos 150 caracteres." }
+          - label: "Portada"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Texto pequeño sobre el título (opcional)", name: kicker, widget: string, required: false, hint: "Si lo dejas vacío, no se muestra nada." }
+              - { label: "Título", name: titulo, widget: string, hint: "Rodea con *asteriscos* la palabra que quieras destacar en cursiva." }
+              - { label: "Texto secundario", name: texto, widget: text }
+              - { label: "Texto del botón principal", name: boton_principal, widget: string }
+              - { label: "Texto del enlace secundario", name: boton_secundario, widget: string }
+              - { label: "Dirección del enlace secundario", name: boton_secundario_url, widget: string }
+              - { label: "Línea informativa", name: linea, widget: text }
+              - { label: "Fotografía", name: foto, widget: image }
+              - { label: "Descripción de la fotografía (para accesibilidad)", name: foto_alt, widget: string }
+          - label: "Cómo puedo ayudarte"
+            name: ayuda
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string, hint: "Rodea con *asteriscos* la palabra que quieras destacar." }
+              - { label: "Texto introductorio", name: intro, widget: text }
+              - label: "Situaciones"
+                name: lista
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: "Título", name: titulo, widget: string }
+                  - { label: "Frase de identificación", name: frase, widget: text }
+                  - { label: "Dibujo", name: icono, widget: select, options: [{ label: "Olas", value: olas }, { label: "Diana", value: diana }, { label: "Espiral", value: espiral }, { label: "Círculos", value: circulos }, { label: "Amanecer", value: amanecer }, { label: "Brote", value: brote }, { label: "Escalones", value: escalones }] }
+              - { label: "Frase final", name: cierre, widget: text }
+          - label: "Servicios"
+            name: servicios
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto introductorio", name: intro, widget: text }
+              - label: "Servicios"
+                name: lista
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: "Nombre", name: titulo, widget: string }
+                  - { label: "Descripción breve", name: frase, widget: text }
+                  - { label: "Dirección del enlace", name: url, widget: string }
+              - { label: "Modalidades", name: modalidades, widget: list, field: { label: "Modalidad", name: modalidad, widget: string } }
+              - { label: "Frase antes de los botones", name: cierre, widget: string }
+          - label: "Sobre mí"
+            name: sobre
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Párrafos", name: parrafos, widget: list, field: { label: "Párrafo", name: parrafo, widget: text } }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Dónde atiendo"
+            name: donde
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - label: "Lugares"
+                name: lista
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: "Nombre", name: titulo, widget: string }
+                  - { label: "Texto", name: texto, widget: text }
+                  - { label: "Dibujo", name: icono, widget: select, options: [{ label: "Ubicación", value: pin }, { label: "Videollamada", value: video }, { label: "Casa", value: casa }] }
+          - label: "Talleres infantiles (bloque de Inicio)"
+            name: talleres
+            widget: object
+            hint: "El próximo taller se muestra solo cuando hay uno marcado como «Próximo» en la sección Talleres infantiles."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Opiniones"
+            name: opiniones
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+          - label: "Preguntas frecuentes (bloque de Inicio)"
+            name: faq
+            widget: object
+            hint: "Las preguntas que se muestran aquí se eligen en la sección Preguntas frecuentes (casilla «Mostrar en Inicio»)."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Tarifas (bloque de Inicio)"
+            name: tarifas
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+          - label: "Cierre y contacto"
+            name: cierre
+            widget: object
+            fields:
+              - { label: "Frase de cierre", name: titulo, widget: string }
 
-      - label: "Tarifas"
-        name: "tarifas"
-        file: "content/paginas/tarifas.md"
-        fields:
-          - { label: "Título SEO", name: "seo_titulo", widget: "string" }
-          - { label: "Descripción SEO", name: "seo_descripcion", widget: "text" }
-          - { label: "Introducción", name: "intro", widget: "text" }
-          - { label: "Individual Almagro", name: "tarifa_individual_almagro", widget: "string", required: false }
-          - { label: "Pareja Almagro", name: "tarifa_pareja_almagro", widget: "string", required: false }
-
-  - name: "faq"
-    label: "Preguntas frecuentes"
-    folder: "content/faq"
-    create: true
-    fields:
-      - { label: "Pregunta", name: "pregunta", widget: "string" }
-      - { label: "Respuesta", name: "respuesta", widget: "text" }
-      - { label: "Etiqueta (no tocar)", name: "tags", widget: "hidden", default: "faq" }
-      - { label: "Permalink (no tocar)", name: "permalink", widget: "hidden", default: false }
-
-  - name: "talleres"
+  # ------------------------------------------------------ TALLERES INFANTILES
+  - name: talleres
     label: "Talleres infantiles"
-    folder: "content/talleres"
+    label_singular: "Taller"
+    folder: contenido/talleres
+    extension: md
+    format: yaml-frontmatter
     create: true
+    slug: "{{slug}}"
+    summary: "{{estado}} · {{mes}} {{anio}} · {{titulo}}"
+    sortable_fields: [orden, titulo, estado]
     fields:
-      - { label: "Título", name: "titulo", widget: "string" }
-      - { label: "Mes", name: "mes", widget: "string" }
-      - { label: "Fecha (opcional, dejar vacío si aún no se sabe)", name: "fecha", widget: "string", required: false }
-      - { label: "Edades", name: "edades", widget: "string" }
-      - { label: "Precio (opcional)", name: "precio", widget: "string", required: false }
-      - { label: "Cartel (opcional)", name: "cartel", widget: "image", required: false }
-      - { label: "Objetivo (opcional)", name: "objetivo", widget: "text", required: false }
-      - label: "Estado"
-        name: "estado"
-        widget: "select"
-        options: ["Previsto", "Próximo", "Realizado"]
-      - { label: "Etiqueta (no tocar)", name: "tags", widget: "hidden", default: "talleres" }
-      - { label: "Permalink (no tocar)", name: "permalink", widget: "hidden", default: false }
+      - { label: "Estado", name: estado, widget: select, options: ["Previsto", "Próximo", "Realizado"], default: "Previsto", hint: "Solo puede haber UN taller «Próximo». Si marcas dos, la web no se actualiza hasta que dejes solo uno." }
+      - { label: "Título", name: titulo, widget: string }
+      - { label: "Mes", name: mes, widget: select, options: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"] }
+      - { label: "Año", name: anio, widget: number, value_type: int, default: 2026 }
+      - { label: "Fecha concreta (opcional)", name: fecha, widget: string, required: false, hint: "Solo si está confirmada, por ejemplo: 14 de noviembre de 2026. Si lo dejas vacío se muestra «Mes Año»." }
+      - { label: "Objetivo", name: objetivo, widget: text }
+      - { label: "Qué trabajaremos (opcional)", name: trabajaremos, widget: list, required: false, field: { label: "Contenido", name: contenido, widget: string } }
+      - { label: "Cartel (opcional)", name: cartel, widget: image, required: false, hint: "Si no hay cartel, se muestra el dibujo genérico de la web." }
+      - { label: "Curso", name: curso, widget: string, default: "2026-2027" }
+      - { label: "Orden dentro del curso", name: orden, widget: number, value_type: int, default: 1, hint: "1 = octubre, 2 = noviembre... 10 = julio." }
+      - { label: "Edades (solo si difieren de lo habitual)", name: edades, widget: string, required: false }
+      - { label: "Horarios (solo si difieren de lo habitual)", name: horarios, widget: string, required: false }
+      - { label: "Lugar (solo si difiere de lo habitual)", name: lugar, widget: string, required: false }
+      - { label: "Aforo (solo si difiere de lo habitual)", name: aforo, widget: string, required: false }
+      - { label: "Precio (solo si difiere de lo habitual)", name: precio, widget: string, required: false }
+      - { label: "Enlace de inscripción (opcional)", name: enlace_reserva, widget: string, required: false, hint: "Si lo dejas vacío, se usa tu WhatsApp." }
+      - { label: "Notas internas", name: notas_internas, widget: text, required: false, hint: "No aparecen en la web, pero el repositorio de GitHub es público: no escribas datos personales." }
+
+  # ------------------------------------------------- PREGUNTAS FRECUENTES
+  - name: faq
+    label: "Preguntas frecuentes"
+    label_singular: "Pregunta"
+    folder: contenido/faq
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    slug: "{{slug}}"
+    summary: "{{pregunta}}"
+    sortable_fields: [orden, pregunta]
+    fields:
+      - { label: "Pregunta", name: pregunta, widget: string }
+      - { label: "Respuesta", name: respuesta, widget: text, hint: "Deja una línea en blanco para separar párrafos." }
+      - { label: "Categoría", name: categoria, widget: select, options: ["Antes de empezar", "Primera sesión", "Proceso terapéutico", "Modalidades", "Talleres infantiles", "Citas", "Tarifas y pagos", "Confidencialidad"] }
+      - { label: "Mostrar en Inicio", name: en_inicio, widget: boolean, default: false }
+      - { label: "Orden", name: orden, widget: number, value_type: int, default: 50, hint: "Número menor = aparece antes." }
+
+  # -------------------------------------------------------------- AJUSTES
+  - name: ajustes
+    label: "Ajustes de la web"
+    files:
+      - name: sitio
+        label: "Contacto, enlaces y menú"
+        file: plantillas/_data/sitio.json
+        format: json
+        fields:
+          - { label: "Nombre (cabecera y pie)", name: marca_nombre, widget: string }
+          - { label: "Profesión (cabecera)", name: marca_profesion, widget: string }
+          - { label: "Número de colegiada", name: colegiada, widget: string }
+          - { label: "Colegio profesional", name: colegio, widget: string }
+          - { label: "Dirección web definitiva", name: url, widget: string }
+          - { label: "Permitir que Google indexe la web", name: indexar, widget: boolean, hint: "Déjalo desactivado hasta el día de la publicación." }
+          - { label: "Enlace de «Pedir cita» (no tocar)", name: cita_url, widget: hidden, default: "/contacto/#canales" }
+          - { label: "Enlace de «Contacto» (no tocar)", name: contacto_url, widget: hidden, default: "/contacto/" }
+          - { label: "Teléfono (como se muestra)", name: telefono, widget: string }
+          - { label: "Teléfono (enlace)", name: telefono_url, widget: string, hint: "Formato: tel:+34633143032" }
+          - { label: "WhatsApp (enlace)", name: whatsapp_url, widget: string, hint: "Formato: https://wa.me/34633143032" }
+          - { label: "Correo electrónico", name: correo, widget: string }
+          - { label: "Doctoralia (enlace)", name: doctoralia_url, widget: string }
+          - { label: "Instagram (enlace)", name: instagram_url, widget: string }
+          - label: "Menú"
+            name: menu
+            widget: list
+            summary: "{{fields.texto}}"
+            fields:
+              - { label: "Texto", name: texto, widget: string }
+              - { label: "Dirección", name: url, widget: string }
+          - label: "Ubicaciones"
+            name: ubicaciones
+            widget: list
+            summary: "{{fields.nombre}}"
+            fields:
+              - { label: "Nombre", name: nombre, widget: string }
+              - { label: "Dirección", name: direccion, widget: string }
+      - name: talleres_comunes
+        label: "Talleres: datos habituales"
+        file: plantillas/_data/talleres_comunes.json
+        format: json
+        fields:
+          - { label: "Edades (resumen)", name: edades, widget: string }
+          - label: "Grupos y horarios"
+            name: grupos
+            widget: list
+            summary: "{{fields.edades}}"
+            fields:
+              - { label: "Edades", name: edades, widget: string }
+              - { label: "Horario", name: horario, widget: string }
+          - { label: "Lugar", name: lugar, widget: string }
+          - { label: "Aforo", name: aforo, widget: string }
+          - { label: "Precio para pacientes de SANA", name: precio_pacientes, widget: string }
+          - { label: "Precio general", name: precio_general, widget: string }
+          - { label: "Nota sobre el precio", name: nota_precio, widget: text }
+          - { label: "Imagen genérica de taller", name: cartel_generico, widget: image, hint: "Se muestra cuando un taller no tiene cartel propio." }

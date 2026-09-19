@@ -1,0 +1,13 @@
+{
+  "edades": "6-8 y 8-12 años",
+  "grupos": [
+    { "edades": "6-8 años", "horario": "10:00-11:30 h" },
+    { "edades": "8-12 años", "horario": "12:00-13:30 h" }
+  ],
+  "lugar": "Almagro",
+  "aforo": "8-9 niños por grupo",
+  "precio_pacientes": "12€",
+  "precio_general": "15€",
+  "nota_precio": "La tarifa reducida se aplica cuando al menos uno de los padres es paciente de SANA.",
+  "cartel_generico": "/assets/img/taller-generico.svg"
+}

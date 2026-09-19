@@ -1,0 +1,27 @@
+{
+  "marca_nombre": "Ángela García",
+  "marca_profesion": "Psicóloga Sanitaria",
+  "colegiada": "CM-03341",
+  "colegio": "Colegio Oficial de Psicología de Castilla-La Mancha",
+  "url": "https://angelagarciamarin.com",
+  "indexar": false,
+  "cita_url": "/contacto/#canales",
+  "contacto_url": "/contacto/",
+  "telefono": "633 14 30 32",
+  "telefono_url": "tel:+34633143032",
+  "whatsapp_url": "https://wa.me/34633143032",
+  "correo": "psicologa@angelagarciamarin.com",
+  "doctoralia_url": "https://www.doctoralia.es/angela-garcia-marin/psicologo/puertollano",
+  "instagram_url": "https://www.instagram.com/angelagarciapsicologia/",
+  "menu": [
+    { "texto": "Cómo puedo ayudarte", "url": "/como-puedo-ayudarte/" },
+    { "texto": "Servicios", "url": "/servicios/" },
+    { "texto": "Sobre mí", "url": "/sobre-mi/" },
+    { "texto": "Talleres infantiles", "url": "/talleres-infantiles/" },
+    { "texto": "Tarifas", "url": "/tarifas/" }
+  ],
+  "ubicaciones": [
+    { "nombre": "Almagro", "direccion": "C/ Carretería, 21, Almagro (Ciudad Real)" },
+    { "nombre": "Puertollano", "direccion": "C/ Aduana, 26, 1A, Puertollano (Ciudad Real)" }
+  ]
+}

@@ -1,0 +1,20 @@
+<header class="cabecera">
+  <div class="cabecera__in">
+    <a class="marca" href="/">
+      <span class="marca__nombre">{{ sitio.marca_nombre }}</span>
+      <span class="marca__profesion">{{ sitio.marca_profesion }}</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="sr">Menú</span>
+      <span class="menu-btn__barras" aria-hidden="true"></span>
+    </button>
+    <nav id="menu-principal" class="menu" aria-label="Principal">
+      <ul>
+        {% for item in sitio.menu %}
+        <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.texto }}</a></li>
+        {% endfor %}
+      </ul>
+      <a class="btn btn--menu" href="{{ sitio.cita_url }}">Pedir cita</a>
+    </nav>
+  </div>
+</header>

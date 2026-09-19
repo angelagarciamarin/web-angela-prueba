@@ -1,0 +1,40 @@
+{% from "iconos.njk" import icono %}
+<footer class="pie">
+  <div class="contenedor pie__in">
+    <div class="pie__marca">
+      <p class="pie__nombre">{{ sitio.marca_nombre }}</p>
+      <p>Psicóloga General Sanitaria</p>
+      <p class="pie__colegio">Colegiada {{ sitio.colegiada }}<br>{{ sitio.colegio }}</p>
+    </div>
+    <div>
+      <p class="pie__tit">Dónde atiendo</p>
+      <ul class="pie__lista">
+        {% for u in sitio.ubicaciones %}
+        <li><strong>{{ u.nombre }}</strong><br>{{ u.direccion }}</li>
+        {% endfor %}
+        <li>Terapia online y atención a domicilio en Almagro</li>
+      </ul>
+    </div>
+    <div>
+      <p class="pie__tit">Contacto</p>
+      <ul class="pie__lista">
+        <li><a href="{{ sitio.telefono_url }}">{{ sitio.telefono }}</a></li>
+        <li><a href="mailto:{{ sitio.correo }}">{{ sitio.correo }}</a></li>
+        <li><a href="{{ sitio.doctoralia_url }}" target="_blank" rel="noopener noreferrer">Doctoralia</a></li>
+        <li><a href="{{ sitio.instagram_url }}" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="pie__tit">Información</p>
+      <ul class="pie__lista">
+        <li><a href="{{ sitio.cita_url }}">Pedir cita</a></li>
+        <li><a href="/preguntas-frecuentes/">Preguntas frecuentes</a></li>
+        <li><a href="/aviso-legal/">Aviso legal</a></li>
+        <li><a href="/politica-de-privacidad/">Política de privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pie__fila">
+    <p class="pie__base">© {{ anio }} {{ sitio.marca_nombre }}</p>
+  </div>
+</footer>

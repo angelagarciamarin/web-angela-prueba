@@ -1,0 +1,209 @@
+---
+layout: base.njk
+---
+{% from "iconos.njk" import icono %}
+
+{# 1 · PORTADA #}
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero__texto">
+    {% if hero.kicker %}<p class="hero__kicker">{{ hero.kicker }}</p>{% endif %}
+    <h1 id="hero-titulo">{{ hero.titulo | enfasis | safe }}</h1>
+    <p class="hero__sec">{{ hero.texto }}</p>
+    <div class="acciones">
+      <a class="btn" href="{{ sitio.cita_url }}">{{ hero.boton_principal }}</a>
+      <a class="enlace" href="{{ hero.boton_secundario_url }}">{{ hero.boton_secundario }}{{ icono("flecha") }}</a>
+    </div>
+    <p class="hero__linea">{{ hero.linea }}</p>
+  </div>
+  <div class="hero__foto">
+    <img src="{{ hero.foto }}" alt="{{ hero.foto_alt }}" width="1200" height="1200" fetchpriority="high">
+  </div>
+</section>
+
+{# 2 · CÓMO PUEDO AYUDARTE #}
+<section class="seccion seccion--niebla" id="como-puedo-ayudarte" aria-labelledby="ayuda-titulo">
+  <div class="contenedor ayuda">
+    <div class="ayuda__cab">
+      <h2 id="ayuda-titulo">{{ ayuda.titulo | enfasis | safe }}</h2>
+      <p class="intro">{{ ayuda.intro }}</p>
+    </div>
+    <div>
+      <ul class="ayuda__lista">
+        {% for it in ayuda.lista %}
+        <li>
+          {{ icono(it.icono) }}
+          <div>
+            <h3>{{ it.titulo }}</h3>
+            <p>{{ it.frase }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="ayuda__cierre">
+        <p class="cierre-texto">{{ ayuda.cierre }}</p>
+        <div class="acciones">
+          <a class="btn" href="{{ sitio.cita_url }}">Pedir cita</a>
+          <a class="enlace" href="{{ sitio.contacto_url }}">Contactar{{ icono("flecha") }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 3 · SERVICIOS #}
+<section class="seccion" id="servicios" aria-labelledby="servicios-titulo">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <h2 id="servicios-titulo">{{ servicios.titulo | enfasis | safe }}</h2>
+      <p class="intro">{{ servicios.intro }}</p>
+    </div>
+    <ul class="servicios__lista">
+      {% for s in servicios.lista %}
+      <li>
+        <a class="servicio" href="{{ s.url }}">
+          <h3>{{ s.titulo }}</h3>
+          <p>{{ s.frase }}</p>
+          {{ icono("flecha") }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <ul class="modalidades">
+      {% for m in servicios.modalidades %}
+      <li>{{ m }}</li>
+      {% endfor %}
+    </ul>
+    <div class="cierre-fila">
+      <p class="cierre-texto">{{ servicios.cierre }}</p>
+      <div class="acciones">
+        <a class="btn" href="/servicios/">Ver servicios</a>
+        <a class="enlace" href="{{ sitio.cita_url }}">Pedir cita{{ icono("flecha") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 4 · SOBRE MÍ #}
+<section class="seccion seccion--niebla" id="sobre-mi" aria-labelledby="sobre-titulo">
+  <div class="contenedor dos">
+    <h2 id="sobre-titulo">{{ sobre.titulo | enfasis | safe }}</h2>
+    <div class="texto-largo">
+      {% for p in sobre.parrafos %}<p>{{ p }}</p>{% endfor %}
+      <a class="enlace" href="{{ sobre.enlace_url }}">{{ sobre.enlace }}{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>
+
+{# 5 · DÓNDE ATIENDO #}
+<section class="seccion" id="donde-atiendo" aria-labelledby="donde-titulo">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <h2 id="donde-titulo">{{ donde.titulo | enfasis | safe }}</h2>
+    </div>
+    <ul class="lugares">
+      {% for l in donde.lista %}
+      <li class="lugar">
+        {{ icono(l.icono) }}
+        <div>
+          <h3>{{ l.titulo }}</h3>
+          <p>{{ l.texto }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="acciones acciones--arriba">
+      <a class="btn" href="{{ sitio.cita_url }}">Pedir cita</a>
+      <a class="enlace" href="{{ sitio.contacto_url }}">Ver contacto{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>
+
+{# 6 · TALLERES INFANTILES #}
+{% set proximo = collections.proximoTaller | first %}
+<section class="seccion seccion--niebla" id="talleres" aria-labelledby="talleres-titulo">
+  <div class="contenedor talleres{% if proximo %} talleres--con-proximo{% endif %}">
+    <div class="talleres__texto">
+      <h2 id="talleres-titulo">{{ talleres.titulo | enfasis | safe }}</h2>
+      <p class="intro">{{ talleres.texto }}</p>
+      <div class="acciones acciones--arriba">
+        <a class="enlace" href="{{ talleres.enlace_url }}">{{ talleres.enlace }}{{ icono("flecha") }}</a>
+      </div>
+    </div>
+    {% if proximo %}
+    <article class="proximo" aria-label="Próximo taller">
+      <img src="{{ proximo.data.cartel or talleres_comunes.cartel_generico }}" alt="{% if proximo.data.cartel %}Cartel del taller {{ proximo.data.titulo }}{% endif %}" width="400" height="500" loading="lazy">
+      <div class="proximo__datos">
+        <p class="proximo__etiqueta">Próximo taller</p>
+        <p class="proximo__fecha">{{ proximo.data.fecha or (proximo.data.mes ~ " " ~ proximo.data.anio) }}</p>
+        <h3>{{ proximo.data.titulo }}</h3>
+        <p>{{ proximo.data.objetivo }}</p>
+        <p class="proximo__meta">{{ proximo.data.edades or talleres_comunes.edades }}</p>
+        <div class="acciones acciones--arriba">
+          <a class="btn" href="{{ proximo.data.enlace_reserva or sitio.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Más información e inscripción por WhatsApp</a>
+          <a class="enlace" href="{{ sitio.telefono_url }}">o llama al {{ sitio.telefono }}</a>
+        </div>
+      </div>
+    </article>
+    {% endif %}
+  </div>
+</section>
+
+{# 7 · OPINIONES #}
+<section class="seccion" id="opiniones" aria-labelledby="opiniones-titulo">
+  <div class="contenedor dos">
+    <h2 id="opiniones-titulo">{{ opiniones.titulo | enfasis | safe }}</h2>
+    <div class="texto-largo">
+      <p>{{ opiniones.texto }}</p>
+      <a class="enlace" href="{{ sitio.doctoralia_url }}" target="_blank" rel="noopener noreferrer">{{ opiniones.enlace }}{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>
+
+{# 8 · PREGUNTAS FRECUENTES #}
+<section class="seccion seccion--niebla" id="preguntas-frecuentes" aria-labelledby="faq-titulo">
+  <div class="contenedor dos">
+    <div class="faq__cab">
+      <h2 id="faq-titulo">{{ faq.titulo | enfasis | safe }}</h2>
+      <div class="acciones acciones--arriba">
+        <a class="enlace" href="{{ faq.enlace_url }}">{{ faq.enlace }}{{ icono("flecha") }}</a>
+      </div>
+    </div>
+    <div class="faq">
+      {% for f in collections.faqInicio %}
+      <details>
+        <summary>{{ f.data.pregunta }}</summary>
+        <div class="respuesta">{{ f.data.respuesta | parrafos | safe }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# 9 · TARIFAS #}
+<section class="seccion" id="tarifas" aria-labelledby="tarifas-titulo">
+  <div class="contenedor dos">
+    <h2 id="tarifas-titulo">{{ tarifas.titulo | enfasis | safe }}</h2>
+    <div class="texto-largo">
+      <p>{{ tarifas.texto }}</p>
+      <a class="enlace" href="/tarifas/">{{ tarifas.enlace }}{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>
+
+{# 10 · CIERRE Y CONTACTO #}
+<section class="cierre" id="contacto" aria-labelledby="cierre-titulo">
+  <div class="contenedor">
+    <h2 id="cierre-titulo">{{ cierre.titulo }}</h2>
+    <div class="acciones acciones--arriba">
+      <a class="btn" href="{{ sitio.cita_url }}">Pedir cita</a>
+    </div>
+    <ul class="canales">
+      <li><a class="canal" href="{{ sitio.doctoralia_url }}" target="_blank" rel="noopener noreferrer">{{ icono("calendario") }}<span>Doctoralia</span></a></li>
+      <li><a class="canal" href="{{ sitio.whatsapp_url }}" target="_blank" rel="noopener noreferrer">{{ icono("whatsapp") }}<span>WhatsApp</span></a></li>
+      <li><a class="canal" href="{{ sitio.telefono_url }}">{{ icono("telefono") }}<span>{{ sitio.telefono }}</span></a></li>
+      <li><a class="canal" href="mailto:{{ sitio.correo }}">{{ icono("correo") }}<span>Correo</span></a></li>
+      <li><a class="canal" href="{{ sitio.contacto_url }}">{{ icono("mensaje") }}<span>Contacto</span></a></li>
+    </ul>
+    <p class="cierre__instagram"><a class="canal canal--discreto" href="{{ sitio.instagram_url }}" target="_blank" rel="noopener noreferrer">{{ icono("instagram") }}<span>Instagram</span></a></p>
+  </div>
+</section>

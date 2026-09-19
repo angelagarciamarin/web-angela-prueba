@@ -1,18 +1,86 @@
+const fs = require("fs");
+
+// Convierte texto plano en HTML seguro. *palabra* se muestra destacada (cursiva).
+const escapar = (texto) =>
+  String(texto == null ? "" : texto)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+const ordenar = (a, b) =>
+  (a.data.orden == null ? 999 : a.data.orden) - (b.data.orden == null ? 999 : b.data.orden);
+
 module.exports = function (eleventyConfig) {
-  // Copiamos el panel de administración (Sveltia CMS) tal cual, sin procesarlo
+  // ---- Archivos que se copian tal cual a la web publicada ----
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("admin");
 
-  // Copiamos las imágenes que se suban desde el CMS (carteles de talleres, etc.)
-  eleventyConfig.addPassthroughCopy({ "content/talleres": "talleres" });
+  // ---- Tipografías autoalojadas (se sirven desde tu propio dominio, sin Google Fonts) ----
+  const fuentes = [
+    ["node_modules/@fontsource-variable/fraunces", "assets/fonts/fraunces"],
+    ["node_modules/@fontsource-variable/jost", "assets/fonts/jost"],
+  ];
+  fuentes.forEach(([origen, destino]) => {
+    ["index.css", "wght-italic.css", "files"].forEach((archivo) => {
+      if (fs.existsSync(`${origen}/${archivo}`)) {
+        eleventyConfig.addPassthroughCopy({ [`${origen}/${archivo}`]: `${destino}/${archivo}` });
+      }
+    });
+  });
+
+  // ---- Filtros de texto ----
+  eleventyConfig.addFilter("enfasis", (texto) =>
+    escapar(texto).replace(/\*([^*]+)\*/g, "<em>$1</em>")
+  );
+  eleventyConfig.addFilter("parrafos", (texto) =>
+    escapar(texto)
+      .split(/\n\s*\n/)
+      .map((p) => "<p>" + p.trim().replace(/\n/g, "<br>") + "</p>")
+      .join("")
+  );
+
+  // ---- Datos globales ----
+  eleventyConfig.addGlobalData("anio", () => new Date().getFullYear());
+
+  // ---- Colecciones de contenido ----
+  eleventyConfig.addCollection("faq", (api) =>
+    api.getFilteredByGlob("./contenido/faq/*.md").sort(ordenar)
+  );
+  eleventyConfig.addCollection("faqInicio", (api) =>
+    api
+      .getFilteredByGlob("./contenido/faq/*.md")
+      .filter((item) => item.data.en_inicio)
+      .sort(ordenar)
+  );
+  eleventyConfig.addCollection("talleres", (api) =>
+    api.getFilteredByGlob("./contenido/talleres/*.md").sort(ordenar)
+  );
+  // Solo puede haber UN taller marcado como "Próximo". Si hay más, la web no se
+  // publica y se conserva la versión anterior (así nunca aparecen dos a la vez).
+  eleventyConfig.addCollection("proximoTaller", (api) => {
+    const proximos = api
+      .getFilteredByGlob("./contenido/talleres/*.md")
+      .filter((item) => item.data.estado === "Próximo");
+    if (proximos.length > 1) {
+      const titulos = proximos.map((t) => `"${t.data.titulo}"`).join(", ");
+      throw new Error(
+        `Hay ${proximos.length} talleres marcados como "Próximo" (${titulos}). ` +
+          `Solo puede haber uno: cambia el estado de los demás a "Previsto" o "Realizado".`
+      );
+    }
+    return proximos;
+  });
 
   return {
     dir: {
       input: ".",
-      includes: "src/_includes",
       output: "_site",
+      includes: "plantillas/_includes",
+      data: "plantillas/_data",
     },
-    templateFormats: ["md", "njk", "html"],
-    markdownTemplateEngine: "njk",
+    templateFormats: ["md", "njk"],
+    markdownTemplateEngine: false,
     htmlTemplateEngine: "njk",
   };
 };

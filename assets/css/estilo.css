@@ -401,3 +401,39 @@ html.js .panel-titulo { position: absolute; width: 1px; height: 1px; overflow: h
   .practica__lista li:first-child { padding-top: 28px; border-top: 1px solid var(--linea); }
 }
 .cierre__texto { max-width: 36rem; margin-top: 1.25rem; font-size: 1.2rem; color: #dce8ec; }
+
+/* ---------- Servicios ---------- */
+.servicios-nav { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 2.5rem; }
+.servicios-nav a { padding-bottom: 3px; text-decoration: none; font-weight: 500; color: var(--petroleo); border-bottom: 1px solid var(--salvia); transition: color 0.2s, border-color 0.2s; }
+.servicios-nav a:hover { color: var(--salvia-texto); border-bottom-color: var(--salvia-texto); }
+.h2--ficha { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
+.modalidad { margin-top: 1.25rem; max-width: 20rem; font-size: 0.98rem; color: var(--suave); }
+.modalidades-resumen li { padding: 18px 0; border-top: 1px solid var(--linea); font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; color: var(--petroleo); }
+.modalidades-resumen li:last-child { border-bottom: 1px solid var(--linea); }
+.modalidades-resumen + .enlace { margin-top: 2rem; }
+
+/* ---------- Cómo puedo ayudarte (página completa) ---------- */
+.acordeon details { border-top: 1px solid var(--linea); }
+.acordeon details:last-child { border-bottom: 1px solid var(--linea); }
+.acordeon summary { display: grid; grid-template-columns: 40px minmax(0, 1fr) 16px; gap: 0 28px; align-items: start; padding: 32px 0; cursor: pointer; list-style: none; }
+.acordeon summary::-webkit-details-marker { display: none; }
+.acordeon summary > .icono { width: 40px; height: 40px; color: var(--salvia-texto); }
+.ac-cab { display: block; }
+.ac-titulo { display: block; font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 350; line-height: 1.2; color: var(--petroleo); transition: color 0.2s; }
+.ac-frase { display: block; margin-top: 0.5rem; max-width: 40rem; color: var(--suave); }
+.acordeon summary:hover .ac-titulo { color: var(--salvia-texto); }
+.acordeon summary::after {
+  content: ""; width: 14px; height: 14px; margin-top: 0.55rem; color: var(--petroleo);
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+  transition: transform 0.25s;
+}
+.acordeon details[open] summary::after { transform: rotate(45deg); }
+.ac-cuerpo { padding: 0 44px 36px 68px; }
+.ac-cuerpo p { max-width: 40rem; font-size: 1.15rem; }
+@media (max-width: 639px) {
+  .acordeon summary { grid-template-columns: 32px minmax(0, 1fr) 14px; gap: 0 18px; padding: 26px 0; }
+  .acordeon summary > .icono { width: 32px; height: 32px; }
+  .ac-cuerpo { padding: 0 0 28px 50px; }
+}

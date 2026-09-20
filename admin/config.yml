@@ -38,20 +38,13 @@ collections:
               - { label: "Línea informativa", name: linea, widget: text }
               - { label: "Fotografía", name: foto, widget: image }
               - { label: "Descripción de la fotografía (para accesibilidad)", name: foto_alt, widget: string }
-          - label: "Cómo puedo ayudarte"
+          - label: "Cómo puedo ayudarte (bloque de Inicio)"
             name: ayuda
             widget: object
+            hint: "Las 7 situaciones (título, frase y dibujo) se editan en Ajustes de la web → Áreas: cómo puedo ayudarte."
             fields:
               - { label: "Título", name: titulo, widget: string, hint: "Rodea con *asteriscos* la palabra que quieras destacar." }
               - { label: "Texto introductorio", name: intro, widget: text }
-              - label: "Situaciones"
-                name: lista
-                widget: list
-                summary: "{{fields.titulo}}"
-                fields:
-                  - { label: "Título", name: titulo, widget: string }
-                  - { label: "Frase de identificación", name: frase, widget: text }
-                  - { label: "Dibujo", name: icono, widget: select, options: [{ label: "Olas", value: olas }, { label: "Diana", value: diana }, { label: "Espiral", value: espiral }, { label: "Círculos", value: circulos }, { label: "Amanecer", value: amanecer }, { label: "Brote", value: brote }, { label: "Escalones", value: escalones }] }
               - { label: "Frase final", name: cierre, widget: text }
           - label: "Servicios"
             name: servicios
@@ -279,6 +272,74 @@ collections:
               - { label: "Título", name: titulo, widget: string }
               - { label: "Texto", name: texto, widget: text }
 
+      - name: servicios
+        label: "Servicios"
+        file: contenido/paginas/servicios.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "servicios.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/servicios/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Ideal: unos 150 caracteres." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Servicios"
+            name: lista
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Identificador (no tocar)", name: id, widget: hidden }
+              - { label: "Nombre corto (para el índice de arriba)", name: corto, widget: string }
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Frase destacada", name: frase, widget: text }
+              - { label: "Párrafos", name: parrafos, widget: list, field: { label: "Párrafo", name: parrafo, widget: text } }
+              - { label: "Modalidades", name: modalidad, widget: string }
+          - label: "Talleres infantiles"
+            name: talleres
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Modalidades"
+            name: modalidades
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Frases", name: lista, widget: list, field: { label: "Frase", name: frase, widget: string } }
+              - { label: "Texto del enlace a Tarifas", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Cierre"
+            name: cierre
+            widget: object
+            fields:
+              - { label: "Frase de cierre", name: titulo, widget: text }
+
+      - name: como_puedo_ayudarte
+        label: "Cómo puedo ayudarte (página completa)"
+        file: contenido/paginas/como-puedo-ayudarte.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "ayuda.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/como-puedo-ayudarte/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Ideal: unos 150 caracteres." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            hint: "Las 7 áreas y sus textos se editan en Ajustes de la web → Áreas: cómo puedo ayudarte."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Cierre"
+            name: cierre
+            widget: object
+            fields:
+              - { label: "Frase de cierre", name: titulo, widget: text }
+
   # ------------------------------------------------------ TALLERES INFANTILES
   - name: talleres
     label: "Talleres infantiles"
@@ -367,6 +428,21 @@ collections:
               - { label: "Localidad (página de Contacto)", name: localidad, widget: string }
               - { label: "Dirección completa (pie de página)", name: direccion, widget: string }
               - { label: "Enlace de «Cómo llegar»", name: mapa_url, widget: string, hint: "Enlace de Google Maps que se abre al pulsar el botón." }
+      - name: areas
+        label: "Áreas: cómo puedo ayudarte"
+        file: plantillas/_data/areas.json
+        format: json
+        fields:
+          - label: "Las 7 áreas"
+            name: lista
+            widget: list
+            summary: "{{fields.titulo}}"
+            hint: "Se muestran en Inicio (título, frase y dibujo) y en la página Cómo puedo ayudarte (con el texto ampliado)."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Frase de identificación", name: frase, widget: text }
+              - { label: "Dibujo", name: icono, widget: select, options: [{ label: "Olas", value: olas }, { label: "Diana", value: diana }, { label: "Espiral", value: espiral }, { label: "Círculos", value: circulos }, { label: "Amanecer", value: amanecer }, { label: "Brote", value: brote }, { label: "Escalones", value: escalones }] }
+              - { label: "Texto ampliado (página completa)", name: texto, widget: text }
       - name: talleres_comunes
         label: "Talleres: datos habituales"
         file: plantillas/_data/talleres_comunes.json

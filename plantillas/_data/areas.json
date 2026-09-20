@@ -1,0 +1,46 @@
+{
+  "lista": [
+    {
+      "titulo": "Ansiedad, estrés y estado de ánimo",
+      "frase": "Cuando cuesta encontrar calma, energía o ilusión en el día a día.",
+      "icono": "olas",
+      "texto": "Hay momentos en los que la mente no descansa, el cuerpo se siente en tensión o las ganas se apagan sin que sepamos muy bien por qué. En terapia dedicamos tiempo a comprender qué está pasando y qué lo mantiene, y a construir, a tu ritmo, formas de cuidarte que se ajusten a tu vida."
+    },
+    {
+      "titulo": "Autoestima y autoexigencia",
+      "frase": "Cuando te tratas con más dureza de la que usarías con otra persona.",
+      "icono": "diana",
+      "texto": "A veces la exigencia y la autocrítica se convierten en una voz constante que pesa más de lo que ayuda. Podemos mirar de dónde viene esa forma de hablarte y explorar, con calma, otra manera de relacionarte contigo."
+    },
+    {
+      "titulo": "Trauma, apego y experiencias del pasado",
+      "frase": "Cuando algo de tu historia sigue pesando en tu presente.",
+      "icono": "espiral",
+      "texto": "Las experiencias vividas, sobre todo las más difíciles o las relacionadas con los vínculos, pueden seguir influyendo en cómo nos sentimos y nos relacionamos hoy. En un espacio seguro y sin prisas, vamos poniendo palabras a lo que ocurrió y a cómo te afecta ahora. Cuento con formación en Psicoterapia Integradora en Trauma y Apego."
+    },
+    {
+      "titulo": "Relaciones, pareja y familia",
+      "frase": "Cuando aparecen conflictos, distancia o dificultades para entenderos en las relaciones que más te importan.",
+      "icono": "circulos",
+      "texto": "Las relaciones cercanas pueden ser una fuente de bienestar y, a la vez, el lugar donde más duele. Ya sea de forma individual, en pareja o en familia, trabajamos para comprender qué está pasando y para encontrar nuevas formas de comunicaros y de cuidaros."
+    },
+    {
+      "titulo": "Cambios, pérdidas y enfermedad",
+      "frase": "Cuando atraviesas un cambio, una pérdida o un proceso de enfermedad y necesitas un espacio para sostenerte.",
+      "icono": "amanecer",
+      "texto": "Hay etapas en las que la vida se transforma y no siempre sabemos cómo acomodarnos a lo nuevo. Aquí puedes encontrar un espacio para expresar lo que sientes, poner orden en lo que estás viviendo y sentirte acompañado/a durante el proceso. Cuento con formación en Psicooncología."
+    },
+    {
+      "titulo": "Infancia y adolescencia",
+      "frase": "Cuando algo preocupa durante la infancia o la adolescencia y afecta al bienestar del niño, adolescente o de su familia.",
+      "icono": "brote",
+      "texto": "Cada etapa tiene sus propias necesidades y su propia forma de expresar lo que ocurre. El acompañamiento se adapta a la edad y al momento de cada niño o adolescente e incluye a la familia como parte del proceso."
+    },
+    {
+      "titulo": "Crecimiento personal y autoconocimiento",
+      "frase": "Cuando quieres conocerte mejor y construir una vida más alineada contigo.",
+      "icono": "escalones",
+      "texto": "No hace falta estar atravesando una dificultad para acudir a terapia. También puede ser un espacio para conocerte mejor, revisar lo que quieres y dar pasos hacia una vida que sientas más tuya."
+    }
+  ]
+}

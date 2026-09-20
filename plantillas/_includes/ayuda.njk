@@ -1,0 +1,43 @@
+---
+layout: base.njk
+---
+{% from "iconos.njk" import icono %}
+
+{# ENCABEZADO #}
+<section class="pagina-cab" aria-labelledby="ayuda-pag-titulo">
+  <div class="contenedor">
+    <h1 id="ayuda-pag-titulo">{{ encabezado.titulo }}</h1>
+    <p class="intro intro--grande">{{ encabezado.texto }}</p>
+  </div>
+</section>
+
+{# LAS 7 ÁREAS, EN ACORDEÓN #}
+<section class="seccion seccion--niebla seccion--compacta" aria-label="Áreas en las que puedo acompañarte">
+  <div class="contenedor">
+    <div class="acordeon">
+      {% for a in areas.lista %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>
+          {{ icono(a.icono) }}
+          <span class="ac-cab">
+            <span class="ac-titulo">{{ a.titulo }}</span>
+            <span class="ac-frase">{{ a.frase }}</span>
+          </span>
+        </summary>
+        <div class="ac-cuerpo"><p>{{ a.texto }}</p></div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# CIERRE #}
+<section class="cierre cierre--texto" aria-labelledby="cierre-ayuda-titulo">
+  <div class="contenedor">
+    <h2 id="cierre-ayuda-titulo">{{ cierre.titulo }}</h2>
+    <div class="acciones acciones--arriba">
+      <a class="btn" href="{{ sitio.cita_url }}">Pedir cita</a>
+      <a class="enlace" href="{{ sitio.contacto_url }}">Contactar{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>

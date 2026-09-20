@@ -127,6 +127,63 @@ collections:
             fields:
               - { label: "Frase de cierre", name: titulo, widget: string }
 
+      - name: contacto
+        label: "Contacto"
+        file: contenido/paginas/contacto.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "contacto.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/contacto/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Ideal: unos 150 caracteres." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Canales"
+            name: canales
+            widget: object
+            hint: "El teléfono, WhatsApp, correo y enlace de Doctoralia se cambian en Ajustes de la web → Contacto, enlaces y menú."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto del botón de Doctoralia", name: doctoralia_boton, widget: string }
+          - label: "Formulario de contacto"
+            name: formulario
+            widget: object
+            hint: "Textos del formulario. Se mostrará en la web cuando esté activado el envío."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Etiqueta: Nombre", name: etiqueta_nombre, widget: string }
+              - { label: "Etiqueta: Correo electrónico", name: etiqueta_correo, widget: string }
+              - { label: "Etiqueta: Teléfono", name: etiqueta_telefono, widget: string }
+              - { label: "Etiqueta: (opcional)", name: etiqueta_opcional, widget: string }
+              - { label: "Etiqueta: Mensaje", name: etiqueta_mensaje, widget: string }
+              - { label: "Aviso sobre datos clínicos o sensibles", name: aviso, widget: text }
+              - { label: "Indicación sobre menores", name: menores, widget: text }
+              - { label: "Casilla: texto antes del enlace", name: consentimiento_antes, widget: string }
+              - { label: "Casilla: texto del enlace", name: consentimiento_enlace, widget: string }
+              - { label: "Casilla: texto después del enlace", name: consentimiento_despues, widget: string }
+              - { label: "Texto del botón", name: boton, widget: string }
+              - { label: "Mensaje tras enviar correctamente", name: exito, widget: text }
+              - { label: "Mensaje si el envío falla", name: error, widget: text }
+          - label: "Ubicaciones"
+            name: ubicaciones
+            widget: object
+            hint: "Las direcciones se cambian en Ajustes de la web → Contacto, enlaces y menú."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto del botón de cada ubicación", name: boton, widget: string }
+              - { label: "Texto sobre online y domicilio", name: otras, widget: text }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Instagram"
+            name: instagram
+            widget: object
+            fields:
+              - { label: "Frase", name: texto, widget: text }
+              - { label: "Nombre de usuario que se muestra", name: usuario, widget: string }
+
   # ------------------------------------------------------ TALLERES INFANTILES
   - name: talleres
     label: "Talleres infantiles"
@@ -189,6 +246,7 @@ collections:
           - { label: "Número de colegiada", name: colegiada, widget: string }
           - { label: "Colegio profesional", name: colegio, widget: string }
           - { label: "Dirección web definitiva", name: url, widget: string }
+          - { label: "Formulario activo (no tocar)", name: formulario_activo, widget: hidden, default: false }
           - { label: "Permitir que Google indexe la web", name: indexar, widget: boolean, hint: "Déjalo desactivado hasta el día de la publicación." }
           - { label: "Enlace de «Pedir cita» (no tocar)", name: cita_url, widget: hidden, default: "/contacto/#canales" }
           - { label: "Enlace de «Contacto» (no tocar)", name: contacto_url, widget: hidden, default: "/contacto/" }
@@ -211,7 +269,10 @@ collections:
             summary: "{{fields.nombre}}"
             fields:
               - { label: "Nombre", name: nombre, widget: string }
-              - { label: "Dirección", name: direccion, widget: string }
+              - { label: "Calle (página de Contacto)", name: calle, widget: string }
+              - { label: "Localidad (página de Contacto)", name: localidad, widget: string }
+              - { label: "Dirección completa (pie de página)", name: direccion, widget: string }
+              - { label: "Enlace de «Cómo llegar»", name: mapa_url, widget: string, hint: "Enlace de Google Maps que se abre al pulsar el botón." }
       - name: talleres_comunes
         label: "Talleres: datos habituales"
         file: plantillas/_data/talleres_comunes.json

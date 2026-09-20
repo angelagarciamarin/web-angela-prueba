@@ -1,8 +1,8 @@
 ---
 layout: inicio.njk
 permalink: /
-seo_titulo: "Psicóloga en Almagro, Puertollano y online | Ángela García"
-seo_descripcion: "Psicóloga General Sanitaria en Almagro y Puertollano (Ciudad Real). Terapia para niños, adolescentes, adultos, parejas y familias, presencial y online."
+seo_titulo: "Ángela García | Psicóloga Sanitaria"
+seo_descripcion: "Psicóloga General Sanitaria experta en Psicoterapia Integradora en Trauma y Apego, y Psicooncología. Cuidar tu mente transforma tu vida."
 hero:
   kicker: ""
   titulo: "Cuidar tu mente *transforma* tu vida."
@@ -15,28 +15,28 @@ hero:
   foto_alt: "Ángela García, psicóloga, sonriendo sentada en su consulta"
 ayuda:
   titulo: "Cómo puedo *ayudarte*"
-  intro: "Muchas personas llegan a terapia sin saber muy bien cómo ponerle nombre a lo que les pasa. Estas son algunas de las situaciones en las que puedo acompañarte."
+  intro: "Cada persona llega a terapia por motivos distintos. Estos son algunos de los momentos y procesos en los que puedo acompañarte."
   lista:
     - titulo: "Ansiedad, estrés y estado de ánimo"
-      frase: "Sientes preocupación constante, tensión, cansancio o que las emociones te desbordan."
+      frase: "Cuando cuesta encontrar calma, energía o ilusión en el día a día."
       icono: "olas"
     - titulo: "Autoestima y autoexigencia"
-      frase: "Te exiges demasiado, te juzgas con dureza o dudas de tu valía."
+      frase: "Cuando te tratas con más dureza de la que usarías con otra persona."
       icono: "diana"
     - titulo: "Trauma, apego y experiencias del pasado"
-      frase: "Hay vivencias que siguen presentes y condicionan cómo te sientes o te relacionas hoy."
+      frase: "Cuando algo de tu historia sigue pesando en tu presente."
       icono: "espiral"
     - titulo: "Relaciones, pareja y familia"
-      frase: "Sientes que la comunicación o el vínculo con los tuyos se ha vuelto difícil."
+      frase: "Cuando aparecen conflictos, distancia o dificultades para entenderos en las relaciones que más te importan."
       icono: "circulos"
     - titulo: "Cambios, pérdidas y enfermedad"
-      frase: "Estás atravesando una etapa de cambio, una pérdida o un proceso de enfermedad."
+      frase: "Cuando atraviesas un cambio, una pérdida o un proceso de enfermedad y necesitas un espacio para sostenerte."
       icono: "amanecer"
     - titulo: "Infancia y adolescencia"
-      frase: "Tu hijo o hija está pasando por un momento difícil y quieres acompañarle."
+      frase: "Cuando algo preocupa durante la infancia o la adolescencia y afecta al bienestar del niño, adolescente o de su familia."
       icono: "brote"
     - titulo: "Crecimiento personal y autoconocimiento"
-      frase: "Quieres conocerte mejor y cuidar de ti con más herramientas."
+      frase: "Cuando quieres conocerte mejor y construir una vida más alineada contigo."
       icono: "escalones"
   cierre: "Si algo de esto conecta con lo que estás viviendo, podemos valorar juntos cómo ayudarte."
 servicios:
@@ -66,7 +66,7 @@ servicios:
 sobre:
   titulo: "¡Hola! Soy Ángela, Psicóloga General Sanitaria."
   parrafos:
-    - "Trabajo desde una perspectiva integradora, adaptando el proceso y las herramientas a las necesidades de cada persona. Cuento con especial formación e interés en trauma y apego y en psicooncología, áreas que forman parte de mi desarrollo profesional."
+    - "Trabajo desde un enfoque de Psicoterapia Integradora, adaptando el proceso y las herramientas a las necesidades de cada persona. Cuento con especial formación en Psicoterapia Integradora en Trauma y Apego y en Psicooncología, áreas que ocupan un lugar relevante en mi desarrollo profesional."
     - "Mi forma de acompañar parte de la cercanía, el respeto y la ausencia de juicio, creando un espacio en el que puedas expresarte con libertad y avanzar a tu propio ritmo."
   enlace: "Conoce más sobre mí y cómo trabajo"
   enlace_url: "/sobre-mi/"
@@ -80,10 +80,10 @@ donde:
       texto: "C/ Aduana, 26, 1A, Puertollano (Ciudad Real)"
       icono: "pin"
     - titulo: "Online"
-      texto: "Terapia por videollamada para adultos, parejas y familias."
+      texto: "Sesiones por videollamada para adultos, parejas y familias, sin necesidad de desplazamiento."
       icono: "video"
     - titulo: "Atención a domicilio en Almagro"
-      texto: "Especialmente dirigida a personas mayores con movilidad limitada."
+      texto: "Atención psicológica a domicilio, especialmente dirigida a personas mayores con movilidad limitada."
       icono: "casa"
 talleres:
   titulo: "Talleres infantiles"

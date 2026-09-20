@@ -5,6 +5,6 @@ respuesta: 'Las sesiones online se realizan por videollamada a través de Google
 
   Es recomendable contar con una buena conexión, un dispositivo con cámara y micrófono y un lugar tranquilo y privado. El acompañamiento es el mismo que en las sesiones presenciales.'
 categoria: Modalidades
-en_inicio: true
-orden: 4
+en_inicio: false
+orden: 52
 ---

@@ -288,3 +288,79 @@ em { font-style: italic; font-weight: 300; color: var(--salvia-texto); }
 .pie__fila { max-width: calc(var(--ancho) + 2 * var(--margen)); margin-inline: auto; padding-inline: var(--margen); }
 @media (max-width: 999px) { .pie__in { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 599px) { .pie__in { grid-template-columns: 1fr; gap: 32px; padding-top: 56px; } .pie a { overflow-wrap: anywhere; } }
+
+/* ---------- Páginas interiores: Contacto ---------- */
+.pagina-cab { padding-block: clamp(56px, 8vw, 104px) clamp(40px, 6vw, 72px); }
+.intro--grande { max-width: 38rem; margin-top: 1.5rem; font-size: 1.3rem; color: var(--texto); }
+.seccion--compacta { padding-block: clamp(56px, 7vw, 96px); }
+.seccion--franja { padding-block: clamp(32px, 4vw, 48px); }
+.h2--medio { font-size: clamp(1.75rem, 3vw, 2.4rem); }
+
+.contacto-canales { margin-top: 40px; border-bottom: 1px solid var(--linea); }
+.contacto-canal { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px 32px; align-items: center; padding: 28px 0; border-top: 1px solid var(--linea); }
+.contacto-canal__nombre { display: flex; align-items: center; gap: 20px; }
+.contacto-canal__nombre .icono { width: 32px; height: 32px; color: var(--salvia-texto); }
+.contacto-canal h3 { font-size: 1.5rem; }
+.contacto-canal__valor { font-size: 1.15rem; overflow-wrap: anywhere; }
+.contacto-canal__valor .btn { gap: 0.75rem; }
+.contacto-canal__valor .btn .icono { width: 18px; height: 18px; }
+.contacto-canal--principal { padding-block: 36px; }
+
+.ubicaciones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 40px; border-top: 1px solid var(--linea); }
+.ubicacion { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 24px; padding: 36px 32px 36px 0; border-bottom: 1px solid var(--linea); }
+.ubicacion:nth-child(even) { padding-left: 40px; border-left: 1px solid var(--linea); }
+.ubicacion > .icono { width: 36px; height: 36px; color: var(--salvia-texto); }
+.ubicacion p { margin: 0.5rem 0 1.25rem; color: var(--suave); }
+.ubicaciones__otras { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 48px; margin-top: 48px; }
+.ubicaciones__otras p { max-width: 40rem; color: var(--suave); }
+
+.franja-instagram { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; color: var(--suave); font-size: 1rem; }
+.canal-discreto { display: inline-flex; align-items: center; gap: 10px; color: var(--petroleo); text-decoration: none; font-weight: 500; }
+.canal-discreto .icono { width: 22px; height: 22px; color: var(--salvia-texto); }
+.canal-discreto span { border-bottom: 1px solid var(--salvia); padding-bottom: 2px; }
+.canal-discreto:hover span { color: var(--salvia-texto); border-color: var(--salvia-texto); }
+
+@media (max-width: 899px) {
+  .contacto-canal { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+  .contacto-canal--principal { padding-block: 28px; }
+  .contacto-canal__valor { padding-left: 52px; }
+}
+@media (max-width: 767px) {
+  .ubicaciones { grid-template-columns: 1fr; }
+  .ubicacion, .ubicacion:nth-child(even) { padding: 28px 0; border-left: 0; }
+}
+@media (max-width: 519px) {
+  .contacto-canal__valor { font-size: 1.02rem; }
+  .contacto-canal__valor .btn { width: 100%; font-size: 1rem; }
+}
+
+/* ---------- Formulario de contacto ---------- */
+.seccion--linea { border-top: 1px solid var(--linea); }
+.formulario { max-width: 36rem; }
+.formulario__campos { display: grid; gap: 24px; }
+.campo label { display: block; margin-bottom: 0.45rem; font-weight: 500; color: var(--petroleo); }
+.campo .opcional { font-weight: 400; color: var(--suave); }
+.campo input, .campo textarea {
+  width: 100%; padding: 0.85rem 1rem; font: inherit; color: var(--texto);
+  background: #fff; border: 1px solid #b4c4cc; border-radius: 2px;
+  transition: border-color 0.2s;
+}
+.campo input:hover, .campo textarea:hover { border-color: var(--suave); }
+.campo input:focus, .campo textarea:focus { border-color: var(--petroleo); }
+.campo textarea { min-height: 9.5rem; resize: vertical; }
+.formulario__aviso { font-size: 0.95rem; color: var(--suave); }
+.formulario__aviso + .formulario__aviso { margin-top: -12px; }
+.casilla { display: flex; align-items: flex-start; gap: 0.85rem; cursor: pointer; }
+.casilla input { flex: none; width: 1.2rem; height: 1.2rem; margin: 0.28rem 0 0; accent-color: var(--petroleo); }
+.casilla a { text-decoration: underline; text-decoration-color: var(--salvia); text-underline-offset: 3px; }
+.formulario .btn { justify-self: start; cursor: pointer; }
+.formulario__estado { padding: 1.1rem 1.25rem; border-left: 3px solid var(--salvia); background: var(--niebla); color: var(--texto); }
+.formulario__estado[hidden] { display: none; }
+.formulario__estado--error { border-left-color: #9a4545; background: #f8eeee; }
+.formulario--enviado .formulario__campos { display: none; }
+@media (max-width: 899px) {
+  .formulario { max-width: none; }
+}
+@media (max-width: 519px) {
+  .formulario .btn { width: 100%; }
+}

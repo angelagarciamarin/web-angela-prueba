@@ -334,33 +334,34 @@ em { font-style: italic; font-weight: 300; color: var(--salvia-texto); }
   .contacto-canal__valor .btn { width: 100%; font-size: 1rem; }
 }
 
-/* ---------- Formulario de contacto ---------- */
-.seccion--linea { border-top: 1px solid var(--linea); }
-.formulario { max-width: 36rem; }
-.formulario__campos { display: grid; gap: 24px; }
-.campo label { display: block; margin-bottom: 0.45rem; font-weight: 500; color: var(--petroleo); }
-.campo .opcional { font-weight: 400; color: var(--suave); }
-.campo input, .campo textarea {
-  width: 100%; padding: 0.85rem 1rem; font: inherit; color: var(--texto);
-  background: #fff; border: 1px solid #b4c4cc; border-radius: 2px;
-  transition: border-color 0.2s;
-}
-.campo input:hover, .campo textarea:hover { border-color: var(--suave); }
-.campo input:focus, .campo textarea:focus { border-color: var(--petroleo); }
-.campo textarea { min-height: 9.5rem; resize: vertical; }
-.formulario__aviso { font-size: 0.95rem; color: var(--suave); }
-.formulario__aviso + .formulario__aviso { margin-top: -12px; }
-.casilla { display: flex; align-items: flex-start; gap: 0.85rem; cursor: pointer; }
-.casilla input { flex: none; width: 1.2rem; height: 1.2rem; margin: 0.28rem 0 0; accent-color: var(--petroleo); }
-.casilla a { text-decoration: underline; text-decoration-color: var(--salvia); text-underline-offset: 3px; }
-.formulario .btn { justify-self: start; cursor: pointer; }
-.formulario__estado { padding: 1.1rem 1.25rem; border-left: 3px solid var(--salvia); background: var(--niebla); color: var(--texto); }
-.formulario__estado[hidden] { display: none; }
-.formulario__estado--error { border-left-color: #9a4545; background: #f8eeee; }
-.formulario--enviado .formulario__campos { display: none; }
+/* ---------- Páginas interiores: Sobre mí ---------- */
+.cierre .enlace { color: #fff; border-bottom-color: var(--salvia-clara); }
+.cierre .enlace:hover { color: var(--salvia-clara); border-bottom-color: var(--salvia-clara); }
+.cierre--texto h2 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.4rem); }
+
+.sobre-cab { padding-block: clamp(56px, 8vw, 112px) clamp(56px, 8vw, 104px); }
+.sobre-cab__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 6vw, 96px); align-items: end; }
+.sobre-cab--foto .sobre-cab__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; }
+.sobre-lead { margin-top: 1.75rem; max-width: 44rem; font-family: var(--serif); font-size: clamp(1.6rem, 2.9vw, 2.4rem); font-weight: 350; line-height: 1.28; letter-spacing: -0.01em; color: var(--petroleo); text-wrap: pretty; }
+.sobre-cab .texto-largo { margin-top: 1.75rem; }
+.sobre-datos { margin-top: 2.25rem; padding-top: 1.25rem; max-width: 44rem; border-top: 1px solid var(--linea); font-size: 0.98rem; color: var(--suave); }
+.sobre-foto img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: var(--niebla); }
 @media (max-width: 899px) {
-  .formulario { max-width: none; }
+  .sobre-cab__grid, .sobre-cab--foto .sobre-cab__grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 519px) {
-  .formulario .btn { width: 100%; }
+.sobre-ficha { padding: 4px 0 4px 32px; border-left: 1px solid var(--salvia); color: var(--suave); font-size: 1rem; }
+.sobre-ficha p + p { margin-top: 0.4rem; }
+.sobre-ficha .sobre-ficha__titulo { margin-bottom: 0.9rem; font-family: var(--serif); font-size: 1.5rem; line-height: 1.25; color: var(--petroleo); }
+
+.texto-largo .destacado { font-family: var(--serif); font-size: clamp(1.2rem, 1.9vw, 1.45rem); font-weight: 350; line-height: 1.4; color: var(--petroleo); }
+
+.esperar__lista { margin-top: 48px; border-bottom: 1px solid var(--linea); }
+.esperar__item { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 12px 48px; align-items: baseline; padding: 32px 0; border-top: 1px solid var(--linea); }
+.esperar__item h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); }
+.esperar__item p { color: var(--suave); }
+@media (max-width: 899px) {
+  .esperar__item { grid-template-columns: 1fr; padding: 26px 0; }
 }
+
+.titulos { align-self: start; border-bottom: 1px solid var(--linea); }
+.titulos li { padding: 18px 0; border-top: 1px solid var(--linea); font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; color: var(--petroleo); }

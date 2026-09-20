@@ -9,21 +9,6 @@ encabezado:
 canales:
   titulo: "Canales para contactar o pedir cita"
   doctoralia_boton: "Reservar cita en Doctoralia"
-formulario:
-  titulo: "Formulario de contacto"
-  etiqueta_nombre: "Nombre"
-  etiqueta_correo: "Correo electrónico"
-  etiqueta_telefono: "Teléfono"
-  etiqueta_opcional: "(opcional)"
-  etiqueta_mensaje: "Mensaje"
-  aviso: "Por favor, evita incluir información clínica o datos sensibles en este formulario."
-  menores: "Si la consulta está relacionada con un menor, el contacto deberá realizarlo su padre, madre o tutor legal."
-  consentimiento_antes: "He leído y acepto la"
-  consentimiento_enlace: "Política de Privacidad"
-  consentimiento_despues: "para gestionar mi consulta."
-  boton: "Enviar mensaje"
-  exito: "Gracias por escribirme. He recibido tu mensaje y me pondré en contacto contigo a través de los datos que has indicado."
-  error: "No se ha podido enviar el mensaje. Puedes intentarlo de nuevo o contactar conmigo por WhatsApp, teléfono o correo electrónico."
 ubicaciones:
   titulo: "Ubicaciones"
   boton: "Cómo llegar"

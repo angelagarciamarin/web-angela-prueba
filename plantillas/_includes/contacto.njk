@@ -38,46 +38,8 @@ layout: base.njk
   </div>
 </section>
 
-{# FORMULARIO — solo se muestra cuando sitio.formulario_activo = true (aún sin servicio de envío) #}
-{% if sitio.formulario_activo %}
-<section class="seccion seccion--compacta" id="formulario" aria-labelledby="formulario-titulo">
-  <div class="contenedor dos">
-    <h2 id="formulario-titulo" class="h2--medio">{{ formulario.titulo }}</h2>
-    <form class="formulario" method="post" action="#">
-      <div class="formulario__campos">
-        <div class="campo">
-          <label for="f-nombre">{{ formulario.etiqueta_nombre }}</label>
-          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
-        </div>
-        <div class="campo">
-          <label for="f-correo">{{ formulario.etiqueta_correo }}</label>
-          <input id="f-correo" name="correo" type="email" autocomplete="email" required>
-        </div>
-        <div class="campo">
-          <label for="f-telefono">{{ formulario.etiqueta_telefono }} <span class="opcional">{{ formulario.etiqueta_opcional }}</span></label>
-          <input id="f-telefono" name="telefono" type="tel" autocomplete="tel">
-        </div>
-        <div class="campo">
-          <label for="f-mensaje">{{ formulario.etiqueta_mensaje }}</label>
-          <textarea id="f-mensaje" name="mensaje" rows="6" required></textarea>
-        </div>
-        <p class="formulario__aviso">{{ formulario.aviso }}</p>
-        <p class="formulario__aviso">{{ formulario.menores }}</p>
-        <label class="casilla">
-          <input type="checkbox" name="privacidad" required>
-          <span>{{ formulario.consentimiento_antes }} <a href="/politica-de-privacidad/">{{ formulario.consentimiento_enlace }}</a> {{ formulario.consentimiento_despues }}</span>
-        </label>
-        <div class="formulario__estado formulario__estado--error" role="alert" hidden>{{ formulario.error }}</div>
-        <button class="btn" type="submit">{{ formulario.boton }}</button>
-      </div>
-      <div class="formulario__estado formulario__estado--exito" role="status" hidden>{{ formulario.exito }}</div>
-    </form>
-  </div>
-</section>
-{% endif %}
-
 {# UBICACIONES #}
-<section class="seccion seccion--compacta{% if sitio.formulario_activo %} seccion--niebla{% endif %}" id="ubicaciones" aria-labelledby="ubicaciones-titulo">
+<section class="seccion seccion--compacta" id="ubicaciones" aria-labelledby="ubicaciones-titulo">
   <div class="contenedor">
     <h2 id="ubicaciones-titulo" class="h2--medio">{{ ubicaciones.titulo }}</h2>
     <ul class="ubicaciones">
@@ -100,7 +62,7 @@ layout: base.njk
 </section>
 
 {# INSTAGRAM #}
-<section class="seccion seccion--franja{% if sitio.formulario_activo %} seccion--linea{% else %} seccion--niebla{% endif %}" aria-label="Instagram">
+<section class="seccion seccion--niebla seccion--franja" aria-label="Instagram">
   <div class="contenedor franja-instagram">
     <p>{{ instagram.texto }}</p>
     <a class="canal-discreto" href="{{ sitio.instagram_url }}" target="_blank" rel="noopener noreferrer">{{ icono("instagram") }}<span>{{ instagram.usuario }}</span></a>

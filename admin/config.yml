@@ -395,6 +395,28 @@ collections:
               - { label: "Título", name: titulo, widget: string }
               - { label: "Texto", name: texto, widget: text }
 
+      - name: faq_pagina
+        label: "Preguntas frecuentes (página)"
+        file: contenido/paginas/preguntas-frecuentes.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "faq.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/preguntas-frecuentes/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Ideal: unos 150 caracteres." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            hint: "Las preguntas y respuestas se editan en la sección Preguntas frecuentes del menú lateral. Se agrupan solas por categoría."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Cierre"
+            name: cierre
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+
   # ------------------------------------------------------ TALLERES INFANTILES
   - name: talleres
     label: "Talleres infantiles"
@@ -442,7 +464,7 @@ collections:
       - { label: "Respuesta", name: respuesta, widget: text, hint: "Deja una línea en blanco para separar párrafos." }
       - { label: "Categoría", name: categoria, widget: select, options: ["Antes de empezar", "Primera sesión", "Proceso terapéutico", "Modalidades", "Talleres infantiles", "Citas", "Tarifas y pagos", "Confidencialidad"] }
       - { label: "Mostrar en Inicio", name: en_inicio, widget: boolean, default: false }
-      - { label: "Orden", name: orden, widget: number, value_type: int, default: 50, hint: "Número menor = aparece antes." }
+      - { label: "Orden", name: orden, widget: number, value_type: int, default: 50, hint: "Número menor = aparece antes dentro de su categoría." }
 
   # -------------------------------------------------------------- AJUSTES
   - name: ajustes

@@ -8,6 +8,25 @@ const escapar = (texto) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+// Categorías de las preguntas frecuentes, en el orden en que se muestran
+const CATEGORIAS_FAQ = [
+  "Antes de empezar",
+  "Primera sesión",
+  "Proceso terapéutico",
+  "Modalidades",
+  "Talleres infantiles",
+  "Citas",
+  "Tarifas y pagos",
+  "Confidencialidad",
+];
+const enlazable = (texto) =>
+  String(texto)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 const ordenar = (a, b) =>
   (a.data.orden == null ? 999 : a.data.orden) - (b.data.orden == null ? 999 : b.data.orden);
 
@@ -47,6 +66,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("faq", (api) =>
     api.getFilteredByGlob("./contenido/faq/*.md").sort(ordenar)
   );
+  // Preguntas agrupadas por categoría; las categorías sin preguntas no aparecen.
+  eleventyConfig.addCollection("faqCategorias", (api) => {
+    const preguntas = api.getFilteredByGlob("./contenido/faq/*.md").sort(ordenar);
+    const extras = [];
+    preguntas.forEach((p) => {
+      const c = p.data.categoria;
+      if (c && !CATEGORIAS_FAQ.includes(c) && !extras.includes(c)) extras.push(c);
+    });
+    return CATEGORIAS_FAQ.concat(extras)
+      .map((nombre) => ({
+        nombre,
+        id: enlazable(nombre),
+        preguntas: preguntas.filter((p) => p.data.categoria === nombre),
+      }))
+      .filter((c) => c.preguntas.length > 0);
+  });
   eleventyConfig.addCollection("faqInicio", (api) =>
     api
       .getFilteredByGlob("./contenido/faq/*.md")

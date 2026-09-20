@@ -600,6 +600,9 @@ collections:
         fields:
           - { label: "Nombre (cabecera y pie)", name: marca_nombre, widget: string }
           - { label: "Profesión (cabecera)", name: marca_profesion, widget: string }
+          - { label: "Nombre completo (datos estructurados)", name: nombre_completo, widget: string }
+          - { label: "Profesión completa (datos estructurados)", name: profesion, widget: string }
+          - { label: "Fotografía de perfil (datos estructurados)", name: foto_perfil, widget: string, hint: "Ruta de la imagen, por ejemplo /assets/img/angela-portada.jpg" }
           - { label: "Número de colegiada", name: colegiada, widget: string }
           - { label: "Colegio profesional", name: colegio, widget: string }
           - { label: "Dirección web definitiva", name: url, widget: string }
@@ -629,6 +632,8 @@ collections:
               - { label: "Nombre", name: nombre, widget: string }
               - { label: "Calle (página de Contacto)", name: calle, widget: string }
               - { label: "Localidad (página de Contacto)", name: localidad, widget: string }
+              - { label: "Municipio (datos estructurados)", name: municipio, widget: string }
+              - { label: "Provincia (datos estructurados)", name: provincia, widget: string }
               - { label: "Dirección completa (pie de página)", name: direccion, widget: string }
               - { label: "Enlace de «Cómo llegar»", name: mapa_url, widget: string, hint: "Enlace de Google Maps que se abre al pulsar el botón." }
       - name: areas

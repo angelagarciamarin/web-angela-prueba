@@ -464,6 +464,82 @@ collections:
             fields:
               - { label: "Frase de cierre", name: titulo, widget: text }
 
+      - name: aviso_legal
+        label: "Aviso legal"
+        file: contenido/paginas/aviso-legal.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "legal.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/aviso-legal/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text }
+          - { label: "Mostrar aviso de «Borrador provisional»", name: borrador, widget: boolean, default: true, hint: "Desactívalo solo cuando el texto haya sido revisado y esté listo para publicar." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto (opcional)", name: texto, widget: text, required: false }
+          - { label: "Nota final (opcional)", name: nota_final, widget: string, required: false }
+          - label: "Apartados"
+            name: secciones
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto (opcional)", name: texto, widget: text, required: false }
+              - { label: "Párrafos (opcional)", name: parrafos, widget: list, required: false, field: { label: "Párrafo", name: parrafo, widget: text }, hint: "Escribe *[PENDIENTE: …]* entre asteriscos para que salga resaltado como pendiente." }
+              - { label: "Lista (opcional)", name: lista, widget: list, required: false, field: { label: "Elemento", name: elemento, widget: text } }
+              - { label: "Párrafos después de la lista (opcional)", name: parrafos_despues, widget: list, required: false, field: { label: "Párrafo", name: parrafo, widget: text } }
+              - { label: "Cita destacada (opcional)", name: cita, widget: text, required: false }
+              - label: "Datos"
+                name: datos
+                widget: list
+                required: false
+                summary: "{{fields.etiqueta}}"
+                fields:
+                  - { label: "Etiqueta", name: etiqueta, widget: string }
+                  - { label: "Valor", name: valor, widget: text, hint: "Un salto de línea separa varias líneas dentro del mismo dato." }
+                  - { label: "Enlace (opcional)", name: enlace_url, widget: string, required: false }
+                  - { label: "Texto del enlace (opcional)", name: enlace_texto, widget: string, required: false }
+
+      - name: politica_privacidad
+        label: "Política de Privacidad"
+        file: contenido/paginas/politica-de-privacidad.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "legal.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/politica-de-privacidad/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text }
+          - { label: "Mostrar aviso de «Borrador provisional»", name: borrador, widget: boolean, default: true, hint: "Desactívalo solo cuando el texto haya sido revisado y esté listo para publicar." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto (opcional)", name: texto, widget: text, required: false }
+          - { label: "Nota final (opcional)", name: nota_final, widget: string, required: false }
+          - label: "Apartados"
+            name: secciones
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto (opcional)", name: texto, widget: text, required: false }
+              - { label: "Párrafos (opcional)", name: parrafos, widget: list, required: false, field: { label: "Párrafo", name: parrafo, widget: text }, hint: "Escribe *[PENDIENTE: …]* entre asteriscos para que salga resaltado como pendiente." }
+              - { label: "Lista (opcional)", name: lista, widget: list, required: false, field: { label: "Elemento", name: elemento, widget: text } }
+              - { label: "Párrafos después de la lista (opcional)", name: parrafos_despues, widget: list, required: false, field: { label: "Párrafo", name: parrafo, widget: text } }
+              - { label: "Cita destacada (opcional)", name: cita, widget: text, required: false }
+              - label: "Datos"
+                name: datos
+                widget: list
+                required: false
+                summary: "{{fields.etiqueta}}"
+                fields:
+                  - { label: "Etiqueta", name: etiqueta, widget: string }
+                  - { label: "Valor", name: valor, widget: text, hint: "Un salto de línea separa varias líneas dentro del mismo dato." }
+                  - { label: "Enlace (opcional)", name: enlace_url, widget: string, required: false }
+                  - { label: "Texto del enlace (opcional)", name: enlace_texto, widget: string, required: false }
+
   # ------------------------------------------------------ TALLERES INFANTILES
   - name: talleres
     label: "Talleres infantiles"

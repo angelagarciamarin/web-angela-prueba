@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+{% from "iconos.njk" import icono %}
+
+<section class="pagina-cab pagina-cab--legal" aria-labelledby="legal-titulo">
+  <div class="contenedor">
+    <h1 id="legal-titulo">{{ encabezado.titulo }}</h1>
+    {% if encabezado.texto %}<p class="intro intro--grande">{{ encabezado.texto }}</p>{% endif %}
+    {% if borrador %}
+    <p class="borrador" role="note"><strong>Borrador provisional.</strong> Pendiente de revisión jurídica antes de la publicación definitiva.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% for s in secciones %}
+<section class="seccion seccion--compacta legal{% if loop.index % 2 == 1 %} seccion--niebla{% endif %}" aria-labelledby="legal-sec-{{ loop.index }}">
+  <div class="contenedor dos">
+    <h2 id="legal-sec-{{ loop.index }}" class="h2--medio">{{ s.titulo }}</h2>
+    <div class="legal-cuerpo">
+      {% if s.texto %}<p class="legal-texto">{{ s.texto | enfasis | safe }}</p>{% endif %}
+      {% for p in s.parrafos %}<p class="legal-texto">{{ p | enfasis | safe }}</p>{% endfor %}
+      {% if s.lista | length %}
+      <ul class="legal-lista">{% for i in s.lista %}<li>{{ i | enfasis | safe }}</li>{% endfor %}</ul>
+      {% endif %}
+      {% for p in s.parrafos_despues %}<p class="legal-texto">{{ p | enfasis | safe }}</p>{% endfor %}
+      {% if s.cita %}<blockquote class="legal-cita">{{ s.cita }}</blockquote>{% endif %}
+      {% if s.datos | length %}
+      <dl class="datos datos--legal">
+        {% for d in s.datos %}
+        <div>
+          <dt>{{ d.etiqueta }}</dt>
+          <dd>{{ d.valor | parrafos | safe }}{% if d.enlace_url %}<a class="enlace" href="{{ d.enlace_url }}" target="_blank" rel="noopener noreferrer">{{ d.enlace_texto or d.enlace_url }}{{ icono("flecha") }}</a>{% endif %}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{% if nota_final %}
+<section class="seccion seccion--compacta" aria-label="Actualización">
+  <div class="contenedor"><p class="legal-final">{{ nota_final }}</p></div>
+</section>
+{% endif %}

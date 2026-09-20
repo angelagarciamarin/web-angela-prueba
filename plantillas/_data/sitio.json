@@ -50,5 +50,7 @@
       "direccion": "C/ Aduana, 26, 1A, Puertollano (Ciudad Real)",
       "mapa_url": "https://www.google.com/maps/search/?api=1&query=C%2F+Aduana+26%2C+Puertollano%2C+Ciudad+Real"
     }
-  ]
+  ],
+  "og_imagen": "/assets/img/og-imagen.jpg",
+  "og_imagen_alt": "Ángela García, Psicóloga Sanitaria, sonriendo en su consulta. Cuidar tu mente transforma tu vida."
 }

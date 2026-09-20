@@ -603,6 +603,8 @@ collections:
           - { label: "Número de colegiada", name: colegiada, widget: string }
           - { label: "Colegio profesional", name: colegio, widget: string }
           - { label: "Dirección web definitiva", name: url, widget: string }
+          - { label: "Imagen para compartir en redes", name: og_imagen, widget: image, required: false, hint: "Se muestra al compartir la web por WhatsApp, redes sociales, etc. Tamaño recomendado: 1200 × 630 píxeles." }
+          - { label: "Descripción de esa imagen (accesibilidad)", name: og_imagen_alt, widget: string, required: false }
           - { label: "Permitir que Google indexe la web", name: indexar, widget: boolean, hint: "Déjalo desactivado hasta el día de la publicación." }
           - { label: "Enlace de «Pedir cita» (no tocar)", name: cita_url, widget: hidden, default: "/contacto/#canales" }
           - { label: "Enlace de «Contacto» (no tocar)", name: contacto_url, widget: hidden, default: "/contacto/" }

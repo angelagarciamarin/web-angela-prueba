@@ -12,8 +12,17 @@
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="{{ sitio.marca_nombre }} | {{ sitio.marca_profesion }}">
+  <meta property="og:url" content="{{ sitio.url }}{{ page.url }}">
   <meta property="og:title" content="{{ seo_titulo or titulo or sitio.marca_nombre }}">
   {% if seo_descripcion %}<meta property="og:description" content="{{ seo_descripcion }}">{% endif %}
+  {% if sitio.og_imagen %}
+  <meta property="og:image" content="{{ sitio.url }}{{ sitio.og_imagen }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ sitio.og_imagen_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="/assets/fonts/fraunces/index.css">
   <link rel="stylesheet" href="/assets/fonts/fraunces/wght-italic.css">

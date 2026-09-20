@@ -417,6 +417,53 @@ collections:
               - { label: "Título", name: titulo, widget: string }
               - { label: "Texto", name: texto, widget: text }
 
+      - name: psicologia_online
+        label: "Psicología online"
+        file: contenido/paginas/psicologia-online.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "online.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/psicologia-online/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Ideal: unos 150 caracteres." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Para quién es"
+            name: para_quien
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Nota", name: nota, widget: text }
+          - label: "Cómo funcionan las sesiones"
+            name: como
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - label: "Pasos"
+                name: pasos
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: "Título", name: titulo, widget: string }
+                  - { label: "Texto", name: texto, widget: text }
+          - label: "Tarifas"
+            name: tarifas
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Texto del enlace", name: enlace, widget: string }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string }
+          - label: "Cierre"
+            name: cierre
+            widget: object
+            fields:
+              - { label: "Frase de cierre", name: titulo, widget: text }
+
   # ------------------------------------------------------ TALLERES INFANTILES
   - name: talleres
     label: "Talleres infantiles"

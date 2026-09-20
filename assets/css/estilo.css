@@ -490,3 +490,13 @@ html.js .panel-titulo { position: absolute; width: 1px; height: 1px; overflow: h
   .taller-previo--cartel { grid-template-columns: 1fr; }
   .taller-previo__cartel img { max-width: 200px; }
 }
+
+/* ---------- Psicología online ---------- */
+.pasos { margin: 48px 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--linea); }
+.pasos li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 8px 24px; align-items: baseline; padding: 32px 0; border-top: 1px solid var(--linea); }
+.pasos__num { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1; color: var(--salvia-texto); }
+.pasos h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); }
+.pasos p { margin-top: 0.5rem; max-width: 40rem; color: var(--suave); }
+@media (max-width: 599px) {
+  .pasos li { grid-template-columns: 48px minmax(0, 1fr); gap: 4px 16px; padding: 26px 0; }
+}

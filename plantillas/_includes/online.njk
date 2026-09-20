@@ -1,0 +1,63 @@
+---
+layout: base.njk
+---
+{% from "iconos.njk" import icono %}
+
+{# ENCABEZADO #}
+<section class="pagina-cab" aria-labelledby="online-titulo">
+  <div class="contenedor">
+    <h1 id="online-titulo">{{ encabezado.titulo }}</h1>
+    <p class="intro intro--grande">{{ encabezado.texto }}</p>
+  </div>
+</section>
+
+{# PARA QUIÉN ES #}
+<section class="seccion seccion--niebla" id="para-quien" aria-labelledby="para-quien-titulo">
+  <div class="contenedor dos">
+    <h2 id="para-quien-titulo" class="h2--ficha">{{ para_quien.titulo }}</h2>
+    <div class="texto-largo">
+      <p class="destacado">{{ para_quien.texto }}</p>
+      <p>{{ para_quien.nota }}</p>
+    </div>
+  </div>
+</section>
+
+{# CÓMO FUNCIONAN LAS SESIONES (es una secuencia: pasos numerados) #}
+<section class="seccion" id="como-funciona" aria-labelledby="como-titulo">
+  <div class="contenedor">
+    <h2 id="como-titulo" class="h2--ficha">{{ como.titulo }}</h2>
+    <ol class="pasos">
+      {% for p in como.pasos %}
+      <li>
+        <span class="pasos__num" aria-hidden="true">{{ loop.index }}</span>
+        <div>
+          <h3>{{ p.titulo }}</h3>
+          <p>{{ p.texto }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{# TARIFAS #}
+<section class="seccion seccion--niebla seccion--compacta" id="tarifas-online" aria-labelledby="tarifas-online-titulo">
+  <div class="contenedor dos">
+    <h2 id="tarifas-online-titulo" class="h2--ficha">{{ tarifas.titulo }}</h2>
+    <div class="texto-largo">
+      <p>{{ tarifas.texto }}</p>
+      <a class="enlace" href="{{ tarifas.enlace_url }}">{{ tarifas.enlace }}{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>
+
+{# CIERRE #}
+<section class="cierre cierre--texto" aria-labelledby="cierre-online-titulo">
+  <div class="contenedor">
+    <h2 id="cierre-online-titulo">{{ cierre.titulo }}</h2>
+    <div class="acciones acciones--arriba">
+      <a class="btn" href="{{ sitio.cita_url }}">Pedir cita</a>
+      <a class="enlace" href="{{ sitio.contacto_url }}">Contactar{{ icono("flecha") }}</a>
+    </div>
+  </div>
+</section>

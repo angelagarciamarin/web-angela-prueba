@@ -365,3 +365,39 @@ em { font-style: italic; font-weight: 300; color: var(--salvia-texto); }
 
 .titulos { align-self: start; border-bottom: 1px solid var(--linea); }
 .titulos li { padding: 18px 0; border-top: 1px solid var(--linea); font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; color: var(--petroleo); }
+
+/* ---------- Tarifas ---------- */
+.pagina-cab--tarifas { padding-bottom: clamp(56px, 8vw, 104px); }
+.pestanas { margin-top: 56px; }
+.pestanas__lista { display: flex; flex-wrap: wrap; gap: 4px 36px; border-bottom: 1px solid var(--linea); }
+.pestanas__lista[hidden] { display: none; }
+.pestana { appearance: none; margin: 0 0 -1px; padding: 14px 2px; border: 0; border-bottom: 2px solid transparent; background: none; font: 500 1.15rem/1.2 var(--sans); color: var(--suave); cursor: pointer; transition: color 0.2s, border-color 0.2s; }
+.pestana:hover { color: var(--petroleo); }
+.pestana[aria-selected="true"] { color: var(--petroleo); border-bottom-color: var(--petroleo); }
+.pestanas__panel { padding-top: 32px; }
+.pestanas__panel[hidden] { display: none; }
+html.js .panel-titulo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.panel-titulo { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.panel-nota { color: var(--suave); }
+.pestanas__panel:not(:first-of-type) { margin-top: 24px; }
+.tarifas-lista { margin-top: 24px; border-bottom: 1px solid var(--linea); }
+.tarifas-lista li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 6px 40px; align-items: baseline; padding: 26px 0; border-top: 1px solid var(--linea); }
+.tarifa__nombre { font-size: clamp(1.3rem, 2.2vw, 1.75rem); }
+.tarifa__duracion { color: var(--suave); white-space: nowrap; }
+.tarifa__precio { min-width: 4.5ch; text-align: right; font-family: var(--serif); font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight: 350; line-height: 1.1; color: var(--petroleo); }
+.tarifa__detalle { grid-column: 1 / -1; font-size: 1rem; color: var(--suave); }
+@media (max-width: 639px) {
+  .tarifas-lista li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 20px; }
+  .tarifa__nombre { grid-column: 1 / -1; }
+  .tarifa__duracion { grid-column: 1; grid-row: 2; }
+  .tarifa__precio { grid-column: 2; grid-row: 2; }
+  .tarifa__detalle { grid-row: 3; }
+}
+.practica__lista li { padding: 28px 0; border-top: 1px solid var(--linea); }
+.practica__lista li:first-child { padding-top: 6px; border-top: 0; }
+.practica__lista h3 { font-size: 1.4rem; }
+.practica__lista p { margin-top: 0.5rem; max-width: 38rem; color: var(--suave); }
+@media (max-width: 899px) {
+  .practica__lista li:first-child { padding-top: 28px; border-top: 1px solid var(--linea); }
+}
+.cierre__texto { max-width: 36rem; margin-top: 1.25rem; font-size: 1.2rem; color: #dce8ec; }

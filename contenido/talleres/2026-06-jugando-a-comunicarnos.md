@@ -1,6 +1,6 @@
 ---
 curso: 2025-2026
-orden: 12
+orden: -1
 mes: Junio
 anio: 2026
 fecha: 13 de junio de 2026

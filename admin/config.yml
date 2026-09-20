@@ -340,6 +340,61 @@ collections:
             fields:
               - { label: "Frase de cierre", name: titulo, widget: text }
 
+      - name: talleres_pagina
+        label: "Talleres infantiles (página)"
+        file: contenido/paginas/talleres-infantiles.md
+        fields:
+          - { label: "Plantilla (no tocar)", name: layout, widget: hidden, default: "talleres.njk" }
+          - { label: "Dirección (no tocar)", name: permalink, widget: hidden, default: "/talleres-infantiles/" }
+          - { label: "Título para Google (SEO)", name: seo_titulo, widget: string, hint: "Aparece en la pestaña del navegador y en los resultados de Google. Ideal: menos de 60 caracteres." }
+          - { label: "Descripción para Google (SEO)", name: seo_descripcion, widget: text, hint: "Ideal: unos 150 caracteres." }
+          - label: "Encabezado"
+            name: encabezado
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Información general"
+            name: general
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Información práctica"
+            name: practica
+            widget: object
+            hint: "Edades, horarios, lugar, plazas y precio se cambian en Ajustes de la web → Talleres: datos habituales."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto sobre la inscripción", name: inscripcion, widget: text }
+              - { label: "Nota sobre condiciones habituales", name: nota, widget: text }
+          - label: "Próximo taller"
+            name: proximo
+            widget: object
+            hint: "Este bloque solo aparece cuando hay un taller marcado como «Próximo» en la sección Talleres infantiles."
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto del botón", name: boton, widget: string }
+          - label: "Programación del curso"
+            name: programacion
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Curso que se muestra", name: curso, widget: string, hint: "Debe coincidir con el campo «Curso» de los talleres. Ejemplo: 2026-2027" }
+              - { label: "Texto", name: texto, widget: text }
+          - label: "Talleres anteriores"
+            name: anteriores
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Nota bajo los carteles", name: nota_cartel, widget: string }
+          - label: "Cierre"
+            name: cierre
+            widget: object
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+
   # ------------------------------------------------------ TALLERES INFANTILES
   - name: talleres
     label: "Talleres infantiles"
@@ -356,12 +411,13 @@ collections:
       - { label: "Título", name: titulo, widget: string }
       - { label: "Mes", name: mes, widget: select, options: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"] }
       - { label: "Año", name: anio, widget: number, value_type: int, default: 2026 }
+      - { label: "Mes por confirmar", name: mes_por_confirmar, widget: boolean, default: false, required: false, hint: "Actívalo si el taller se ha aplazado y aún no se sabe el mes: en la programación se mostrará «Mes por confirmar»." }
       - { label: "Fecha concreta (opcional)", name: fecha, widget: string, required: false, hint: "Solo si está confirmada, por ejemplo: 14 de noviembre de 2026. Si lo dejas vacío se muestra «Mes Año»." }
       - { label: "Objetivo", name: objetivo, widget: text }
       - { label: "Qué trabajaremos (opcional)", name: trabajaremos, widget: list, required: false, field: { label: "Contenido", name: contenido, widget: string } }
       - { label: "Cartel (opcional)", name: cartel, widget: image, required: false, hint: "Si no hay cartel, se muestra el dibujo genérico de la web." }
       - { label: "Curso", name: curso, widget: string, default: "2026-2027" }
-      - { label: "Orden dentro del curso", name: orden, widget: number, value_type: int, default: 1, hint: "1 = octubre, 2 = noviembre... 10 = julio." }
+      - { label: "Orden dentro del curso", name: orden, widget: number, value_type: int, default: 1, hint: "Numeración que crece con el tiempo (1 = octubre 2026 ... 10 = julio 2027). Los talleres más antiguos llevan un número menor." }
       - { label: "Edades (solo si difieren de lo habitual)", name: edades, widget: string, required: false }
       - { label: "Horarios (solo si difieren de lo habitual)", name: horarios, widget: string, required: false }
       - { label: "Lugar (solo si difiere de lo habitual)", name: lugar, widget: string, required: false }

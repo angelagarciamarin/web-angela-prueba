@@ -10,5 +10,6 @@ trabajaremos:
 - Relajación
 - Ejercicios para conectar con el presente
 estado: Previsto
+mes_por_confirmar: true
 notas_internas: Taller aplazado; fecha por confirmar. Cuando haya un próximo taller real, cambiar su estado a "Próximo".
 ---

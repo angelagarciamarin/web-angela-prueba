@@ -14,7 +14,7 @@ secciones:
       - etiqueta: "Titular"
         valor: "Ángela García Marín"
       - etiqueta: "NIF"
-        valor: "[NIF — completar antes de publicación]"
+        valor: "05738131-E"
       - etiqueta: "Dirección profesional"
         valor: "C/ Carretería, 21, Almagro (Ciudad Real), España"
       - etiqueta: "Correo electrónico"

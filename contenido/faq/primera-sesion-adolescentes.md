@@ -7,7 +7,7 @@ respuesta: 'La primera sesión dura aproximadamente 55 minutos. En la primera pa
 
 
   La familia forma parte del proceso y, cuando es necesario, se realizan sesiones específicas con madre, padre o tutores.'
-categoria: Primera sesión
+categoria: Proceso terapéutico
 en_inicio: false
-orden: 8
+orden: 22
 ---

@@ -18,7 +18,10 @@ layout: base.njk
 {% for c in collections.faqCategorias %}
 <section class="seccion{% if loop.index % 2 == 1 %} seccion--niebla{% endif %}" id="{{ c.id }}" aria-labelledby="titulo-{{ c.id }}">
   <div class="contenedor dos">
-    <h2 id="titulo-{{ c.id }}" class="h2--ficha">{{ c.nombre }}</h2>
+    <div>
+      <h2 id="titulo-{{ c.id }}" class="h2--ficha">{{ c.nombre }}</h2>
+      {% for b in bloques %}{% if b.nombre == c.nombre and b.texto %}<p class="intro">{{ b.texto }}</p>{% endif %}{% endfor %}
+    </div>
     <div class="faq">
       {% for f in c.preguntas %}
       <details>

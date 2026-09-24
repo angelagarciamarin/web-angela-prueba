@@ -6,6 +6,11 @@ seo_descripcion: "Resuelvo las dudas más habituales antes de empezar terapia: p
 encabezado:
   titulo: "Preguntas frecuentes"
   texto: "Aquí encontrarás respuesta a las dudas más habituales antes de empezar. Si no encuentras la tuya, puedes contactar conmigo."
+bloques:
+  - nombre: "Preguntas generales"
+    texto: ""
+  - nombre: "Proceso terapéutico"
+    texto: "Este bloque ayuda a resolver las dudas más habituales antes de empezar terapia."
 cierre:
   titulo: "¿Tienes alguna otra pregunta?"
   texto: "Puedes pedir cita o contactar conmigo si necesitas resolver alguna duda antes de empezar."

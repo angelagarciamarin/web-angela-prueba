@@ -8,17 +8,8 @@ const escapar = (texto) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-// Categorías de las preguntas frecuentes, en el orden en que se muestran
-const CATEGORIAS_FAQ = [
-  "Antes de empezar",
-  "Primera sesión",
-  "Proceso terapéutico",
-  "Modalidades",
-  "Talleres infantiles",
-  "Citas",
-  "Tarifas y pagos",
-  "Confidencialidad",
-];
+// Bloques de las preguntas frecuentes, en el orden en que se muestran
+const CATEGORIAS_FAQ = ["Preguntas generales", "Proceso terapéutico"];
 const enlazable = (texto) =>
   String(texto)
     .normalize("NFD")
@@ -86,7 +77,11 @@ module.exports = function (eleventyConfig) {
     api
       .getFilteredByGlob("./contenido/faq/*.md")
       .filter((item) => item.data.en_inicio)
-      .sort(ordenar)
+      .sort(
+        (a, b) =>
+          (a.data.orden_inicio == null ? a.data.orden : a.data.orden_inicio) -
+          (b.data.orden_inicio == null ? b.data.orden : b.data.orden_inicio)
+      )
   );
   eleventyConfig.addCollection("talleres", (api) =>
     api.getFilteredByGlob("./contenido/talleres/*.md").sort(ordenar)

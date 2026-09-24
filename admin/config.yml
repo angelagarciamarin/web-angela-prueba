@@ -406,10 +406,18 @@ collections:
           - label: "Encabezado"
             name: encabezado
             widget: object
-            hint: "Las preguntas y respuestas se editan en la sección Preguntas frecuentes del menú lateral. Se agrupan solas por categoría."
+            hint: "Las preguntas y respuestas se editan en la sección Preguntas frecuentes del menú lateral. Se agrupan solas por bloque."
             fields:
               - { label: "Título", name: titulo, widget: string }
               - { label: "Texto", name: texto, widget: text }
+          - label: "Bloques"
+            name: bloques
+            widget: list
+            summary: "{{fields.nombre}}"
+            hint: "Frase opcional bajo el título de cada bloque. El nombre debe coincidir con el del bloque."
+            fields:
+              - { label: "Nombre del bloque", name: nombre, widget: string }
+              - { label: "Frase (opcional)", name: texto, widget: text, required: false }
           - label: "Cierre"
             name: cierre
             widget: object
@@ -585,9 +593,10 @@ collections:
     fields:
       - { label: "Pregunta", name: pregunta, widget: string }
       - { label: "Respuesta", name: respuesta, widget: text, hint: "Deja una línea en blanco para separar párrafos." }
-      - { label: "Categoría", name: categoria, widget: select, options: ["Antes de empezar", "Primera sesión", "Proceso terapéutico", "Modalidades", "Talleres infantiles", "Citas", "Tarifas y pagos", "Confidencialidad"] }
+      - { label: "Bloque", name: categoria, widget: select, options: ["Preguntas generales", "Proceso terapéutico"] }
       - { label: "Mostrar en Inicio", name: en_inicio, widget: boolean, default: false }
-      - { label: "Orden", name: orden, widget: number, value_type: int, default: 50, hint: "Número menor = aparece antes dentro de su categoría." }
+      - { label: "Orden", name: orden, widget: number, value_type: int, default: 50, hint: "Número menor = aparece antes dentro de su bloque." }
+      - { label: "Orden en Inicio (opcional)", name: orden_inicio, widget: number, value_type: int, required: false, hint: "Solo si la pregunta se muestra en Inicio: define su posición allí." }
 
   # -------------------------------------------------------------- AJUSTES
   - name: ajustes

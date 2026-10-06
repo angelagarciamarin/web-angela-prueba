@@ -6,14 +6,14 @@ seo_descripcion: Política de Privacidad de la web de Ángela García, Psicólog
 borrador: true
 encabezado:
   titulo: Política de Privacidad
-  texto: Las marcas «PENDIENTE» indican datos que todavía hay que comprobar antes de la publicación definitiva.
+  texto: Las marcas «PENDIENTE» indican datos que todavía hay que comprobar antes de la publicación definitiva. Este texto no sustituye al documento de consentimiento informado que se firma en consulta.
 secciones:
 - titulo: 1. Responsable del tratamiento
   datos:
   - etiqueta: Titular
     valor: Ángela García Marín
   - etiqueta: NIF
-    valor: '05738131-E'
+    valor: 05738131-E
   - etiqueta: Dirección profesional
     valor: C/ Carretería, 21, Almagro (Ciudad Real), España
   - etiqueta: Correo electrónico
@@ -28,11 +28,10 @@ secciones:
   - El tratamiento de datos personales derivado de la prestación de servicios psicológicos (historia clínica, consentimiento informado y demás documentación asistencial) es diferente del tratamiento realizado a través de esta web, y se rige por su propia documentación, que se facilita a las personas atendidas. Esta Política no la sustituye ni la modifica.
 - titulo: 3. Qué datos se tratan a través de la web
   parrafos:
-  - '3.1. Lo que la web no incluye. Este sitio web no incluye formulario de contacto, área de usuarios, suscripciones, comentarios ni ningún otro sistema para enviar mensajes desde la propia web. *[PENDIENTE: confirmar tras la comprobación técnica final de la web publicada.]*'
-  - '3.2. Datos técnicos. Para que la web pueda mostrarse, el proveedor de alojamiento puede tratar datos técnicos de la conexión (por ejemplo, la dirección IP o datos del navegador). *[PENDIENTE: comprobar qué registra realmente el proveedor en la configuración utilizada, con qué finalidad y durante cuánto tiempo.]*'
+  - '3.1. Formulario de contacto. Este sitio web incluye un formulario de contacto para solicitar información o cita. El formulario no se envía a un servidor propio: se procesa a través de Web3Forms, un proveedor externo especializado en formularios para páginas estáticas, que remite el mensaje directamente al correo electrónico de la titular. Más detalles en el apartado 7.'
+  - '3.2. Datos técnicos. Se ha comprobado que la web, tal y como está publicada, no utiliza cookies propias ni herramientas de analítica o seguimiento. Los únicos elementos que carga son los archivos propios del sitio (páginas, estilos y dos scripts de funcionamiento básico del menú y de las pestañas de la página de Tarifas), sin conexión a terceros. *[PENDIENTE: el proveedor de alojamiento (Cloudflare) puede tratar datos técnicos de la conexión —como la dirección IP— para la propia entrega de la web; qué registra exactamente, con qué finalidad y durante cuánto tiempo, depende de sus condiciones de servicio, detalladas en el apartado 7.]*'
   - 3.3. Datos que facilitas al contactar. Si te pones en contacto por correo electrónico, WhatsApp o teléfono, o solicitas cita a través de Doctoralia, los datos que facilites (por ejemplo, tu nombre, tu teléfono, tu correo y el contenido de tu mensaje) serán tratados para atender tu solicitud.
 - titulo: 4. Finalidades
-  parrafos: []
   lista:
   - Atender consultas y solicitudes de información o de cita realizadas por los canales indicados.
   - Garantizar el funcionamiento y la seguridad técnica de la web.
@@ -40,7 +39,7 @@ secciones:
   - Los datos no se utilizan para enviar publicidad ni boletines, ni para elaborar perfiles.
 - titulo: 5. Base jurídica
   parrafos:
-  - '*[PENDIENTE DE REVISIÓN JURÍDICA. No se da por definitiva ninguna base.]*'
+  - '*[PENDIENTE DE REVISIÓN POR TU ABOGADO. No se da por definitiva ninguna base.]*'
   - Según el caso, podrá valorarse la aplicación de medidas precontractuales a petición de la persona interesada (cuando solicita información o cita) y/o el consentimiento de la persona que se pone en contacto. Para los datos técnicos, deberá determinarse la base aplicable.
 - titulo: 6. Plazo de conservación
   parrafos:
@@ -52,23 +51,23 @@ secciones:
   lista:
   - 'Cloudflare — alojamiento y entrega del sitio web. *[PENDIENTE: papel jurídico, condiciones aplicables, conservación y posibles transferencias internacionales.]*'
   - 'Google Workspace — correo electrónico profesional. *[PENDIENTE: papel jurídico, condiciones aplicables, conservación y posibles transferencias internacionales.]*'
+  - 'Web3Forms — recepción y envío del formulario de contacto por correo electrónico, sin almacenamiento permanente por parte de la titular de la web. *[PENDIENTE: papel jurídico, condiciones aplicables, plazo de conservación en los servidores de Web3Forms y posibles transferencias internacionales, según sus propias condiciones de servicio.]*'
   parrafos_despues:
-  - 'No se prevé comunicar los datos a otros terceros, salvo obligación legal. *[PENDIENTE: revisión jurídica y técnica antes de publicar.]*'
+  - 'No se prevé comunicar los datos a otros terceros, salvo obligación legal. *[PENDIENTE: revisión por tu abogado antes de publicar.]*'
 - titulo: 8. Servicios y enlaces de terceros
   parrafos:
   - 'Esta web incluye enlaces a servicios externos que se abren solo cuando la persona decide pulsarlos: Doctoralia, WhatsApp, Google Maps («Cómo llegar») e Instagram. Al acceder a ellos, quedan sujetos a sus propias condiciones y políticas de privacidad.'
-  - 'Esta web no carga contenido incrustado de esos servicios. *[PENDIENTE: comprobar en la web publicada.]*'
+  - 'Confirmado: esta web no carga contenido incrustado de esos servicios; son únicamente enlaces.'
 - titulo: 9. Cookies y tecnologías similares
   parrafos:
-  - '*[PENDIENTE: apartado condicionado a la comprobación técnica final de la web.]*'
-  - Según la configuración prevista, la web no incorpora herramientas de analítica ni de publicidad. Todavía no se puede afirmar qué se almacena realmente en el dispositivo de quien la visita. Una vez terminada técnicamente la web, se comprobará qué utiliza realmente y, solo entonces, se decidirá si hace falta una política de cookies específica o un mecanismo de consentimiento. Hasta entonces no se añade ninguno de forma preventiva.
+  - 'Según la comprobación realizada sobre la configuración técnica actual de la web, esta no instala cookies propias ni utiliza herramientas de analítica o publicidad. El envío del formulario de contacto se realiza mediante una llamada directa al servicio de Web3Forms en el momento del envío, sin dejar cookies en el navegador de la persona usuaria. *[PENDIENTE: antes de la publicación definitiva se realizará una comprobación técnica final, una vez incorporado el formulario y conectado el dominio definitivo, para confirmar que esta conclusión sigue siendo correcta. Si en el futuro se incorporara alguna herramienta que sí utilizara cookies, esta Política se actualizaría en consecuencia antes de ponerla en marcha.]*'
 - titulo: 10. Información sensible y menores
   parrafos:
-  - '*[PENDIENTE DE REVISIÓN JURÍDICA: redacción de este apartado.]*'
+  - '*[PENDIENTE DE REVISIÓN POR TU ABOGADO: redacción de este apartado.]*'
   cita: Por favor, evita enviar información clínica o datos especialmente sensibles por correo electrónico o WhatsApp. Si la consulta está relacionada con un menor, puedes contactar conmigo por estas vías para solicitar información o cita. La información y documentación necesaria para la intervención con menores se gestionará posteriormente por los cauces correspondientes.
 - titulo: 11. Derechos y reclamación
   parrafos:
   - Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, así como retirar el consentimiento cuando este sea la base del tratamiento, escribiendo a psicologa@angelagarciamarin.com. Solo se pedirá información adicional estrictamente necesaria si existen dudas razonables sobre tu identidad.
-  - 'Si consideras que tus datos no se han tratado correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es). *[PENDIENTE: revisión jurídica.]*'
+  - Si consideras que tus datos no se han tratado correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).
 nota_final: 'Fecha de la última actualización: [completar en la publicación]'
 ---

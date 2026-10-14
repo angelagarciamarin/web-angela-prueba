@@ -151,6 +151,7 @@ collections:
               - { label: "Texto sobre online y domicilio", name: otras, widget: text }
               - { label: "Texto del enlace", name: enlace, widget: string }
               - { label: "Dirección del enlace", name: enlace_url, widget: string }
+              - { label: "Aviso para antiguas ubicaciones (opcional)", name: aviso_anteriores, widget: text, required: false, hint: "Por ejemplo, un aviso para quienes te conocieron en una ubicación que ya no ofreces. Déjalo vacío para que no aparezca." }
           - label: "Instagram"
             name: instagram
             widget: object
@@ -243,7 +244,7 @@ collections:
             fields:
               - { label: "Identificador (no tocar)", name: id, widget: hidden }
               - { label: "Nombre de la pestaña", name: nombre, widget: string }
-              - { label: "Nota bajo la pestaña (opcional)", name: nota, widget: text, required: false, hint: "En Almagro y Puertollano la dirección se añade sola desde Ajustes de la web." }
+              - { label: "Nota bajo la pestaña (opcional)", name: nota, widget: text, required: false, hint: "En Almagro la dirección se añade sola desde Ajustes de la web." }
               - label: "Servicios"
                 name: servicios
                 widget: list

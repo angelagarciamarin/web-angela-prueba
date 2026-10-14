@@ -10,7 +10,7 @@ hero:
   boton_principal: Pedir cita
   boton_secundario: Conóceme
   boton_secundario_url: /sobre-mi/
-  linea: Psicología para niños, adolescentes y adultos · Terapia de pareja y familiar · Almagro, Puertollano y online.
+  linea: Psicología para niños, adolescentes y adultos · Terapia de pareja y familiar · Almagro y online.
   foto: /assets/img/angela-portada.jpg
   foto_alt: Ángela García, psicóloga, sonriendo sentada en su consulta
 ayuda:
@@ -37,7 +37,7 @@ servicios:
       frase: Actividades mensuales dirigidas a población infantil, con una temática distinta cada mes.
       url: /talleres-infantiles/
   modalidades:
-    - Presencial en Almagro y Puertollano.
+    - Presencial en Almagro.
     - Online para adultos, parejas y familias.
     - A domicilio en Almagro, especialmente dirigida a personas mayores con movilidad limitada.
   cierre: Conoce todos los servicios
@@ -53,9 +53,6 @@ donde:
   lista:
     - titulo: Almagro
       texto: C/ Carretería, 21, Almagro (Ciudad Real)
-      icono: pin
-    - titulo: Puertollano
-      texto: C/ Aduana, 26, 1A, Puertollano (Ciudad Real)
       icono: pin
     - titulo: Online
       texto: Sesiones por videollamada para adultos, parejas y familias, sin necesidad de desplazamiento.

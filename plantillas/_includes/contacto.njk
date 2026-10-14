@@ -98,7 +98,10 @@ layout: base.njk
       {% endfor %}
     </ul>
     <div class="ubicaciones__otras">
-      <p>{{ ubicaciones.otras }}</p>
+      <div>
+        <p>{{ ubicaciones.otras }}</p>
+        {% if ubicaciones.aviso_anteriores %}<p class="ubicaciones__aviso">{{ ubicaciones.aviso_anteriores }}</p>{% endif %}
+      </div>
       <a class="enlace" href="{{ ubicaciones.enlace_url }}">{{ ubicaciones.enlace }}{{ icono("flecha") }}</a>
     </div>
   </div>

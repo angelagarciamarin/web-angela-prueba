@@ -3,7 +3,7 @@ layout: legal.njk
 permalink: /aviso-legal/
 seo_titulo: "Aviso legal | Ángela García | Psicóloga Sanitaria"
 seo_descripcion: "Aviso legal de la web de Ángela García, Psicóloga General Sanitaria."
-borrador: true
+borrador: false
 encabezado:
   titulo: "Aviso legal"
   texto: ""
